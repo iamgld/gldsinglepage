@@ -8,8 +8,8 @@ import postcss from 'gulp-postcss'
 
 const server = browserSync.create()
 const sassOptions = {
-    outputStyle: 'nested'
-    // includePaths: ["node-modules"]
+    // outputStyle: 'nested'
+    includePaths: ["node-modules"]
 }
 const postCSSPluging = [
     cssnano({
