@@ -1,0 +1,53 @@
+// Paleta de colores del proyecto
+$colors: (
+	firstColor: #371b1c,
+	secondColor: #a5402d,
+	darkColor: #282d31,
+	borderColor: #dfe0e0,
+	textColor: #53575a,
+	bodyBg: #fcfcfc,
+	alertColor: #ff3c32,
+	successColor: #13a059,
+	warningColor: #fba905,
+	html: #e76035,
+	css: #4ea4de,
+	js: #e9de4d,
+	git: #e7483f
+);
+// Funcion para extraer un color
+@function color($color) {
+	@return map-get($colors, $color)
+};
+
+// Typografia del proyecto
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700');
+// Titulos
+$openSans: 'Open Sans', sans-serif;
+// Texto 
+$lato: 'Lato', sans-serif;
+// Tamaño de las fuentes
+$texts: (
+	t1: 36px,
+	t2: 30px,
+	t3: 24px,
+	normal: 20px,
+	small: 16px,
+	smaller: 14px
+);
+// Funcion para extraer el tamaño del texto
+@function text($text) {
+	@return map-get($texts, $text)
+};
+
+// Lista de z-index
+$zindexs: (
+	one: 100,
+	two: 200,
+	three: 300,
+	four: 400,
+	five: 500
+);
+// Funcion para extraer un z-index
+@function zindex($zindex) {
+	@return map-get($zindexs, $zindex)
+}

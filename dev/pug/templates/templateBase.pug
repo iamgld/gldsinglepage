@@ -1,0 +1,14 @@
+block config
+	include  ../config/config
+
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{pageTitle}
+		link(rel="stylesheet" href=cssLink)
+		//- fuente de iconos
+		<link href="https://file.myfontastic.com/gcio3eWv4LtExpQNRLkjHj/icons.css" rel="stylesheet">
+	body
+		block body
