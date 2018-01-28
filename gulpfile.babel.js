@@ -20,7 +20,7 @@ const postCSSPluging = [
 ]
 
 gulp.task('es6', () => {
-    gulp.src('./dev/js/*.js')
+    gulp.src('./dev/js/**/*.js')
         .pipe(babel())
         .pipe(gulp.dest('./public/js'))
 })
@@ -45,7 +45,7 @@ gulp.task('default', () => {
             baseDir: './public'
         }
     })
-    gulp.watch('./dev/js/*.js', ['es6', server.reload])
+    gulp.watch('./dev/js/**/*.js', ['es6', server.reload])
     gulp.watch('./dev/pug/**/*.pug', ['pug', server.reload])
     gulp.watch('./dev/scss/**/*.scss', ['sass'])
 })

@@ -1,4 +1,37 @@
 
-.banner {
-	@include edContainer;
+.bannerContainer {
+
+	@at-root .banner {
+		@include edContainer();
+		padding: $gutter*3 $gutter $gutter*5;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		right: 0;
+		left: 0;
+		min-height: $heightBanner;
+
+		&_title {
+			text-align: center;
+			font-family: $openSans;
+			font-size: text(t1);
+
+			&-one {
+				margin: 0 0 $gutter/2;
+				color: color(bodyBg);
+			}
+		}
+		
+		&_content {
+			text-align: center;
+			font-family: $lato;
+			font-size: text(normal);
+
+			&-one, &-two {
+				margin: 0;
+				color: color(bodyBg);
+			}
+		}
+	}
 }

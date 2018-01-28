@@ -1,4 +1,93 @@
 .menu {
-	@include edContainer;
-	background-color: color(fisrtColor);
+	@include full;
+	position: relative;
+	
+	&_list {
+		@include edContainer;
+		margin: 0 auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(12,1fr);
+		grid-gap: em(5px);
+		padding: $gutter 0;
+		list-style: none;
+
+		&-item {
+			// border: 1px solid green;
+			text-align: center;
+			grid-column: span 3;
+
+			@include from(l) {
+				grid-column: span 1;
+				text-align: left;
+			}
+			
+			&:first-child {
+				grid-column: span 12;
+				
+				@include from(l) {
+					text-align: left;
+					grid-column: span 8;
+				}
+			}
+		}
+		&-link {
+			color: color(bodyBg);
+			display: inline-block;
+			padding: em(5px);
+			font-size: text(small);
+			
+			&:hover {
+				color: color(secondColor);
+				text-decoration: none;
+			}
+
+			@include from(m) {
+				@at-root .icon-globe::after {
+					content: "Home";
+					line-height: 1;
+					vertical-align: top;
+					padding-left: $gutter/3;
+				}
+				@at-root .icon-guide::after {
+					content: "Guia";
+					line-height: 1;
+					vertical-align: top;
+					padding-left: $gutter/3;
+				}
+				@at-root .icon-me::after {
+					content: "Personal";
+					line-height: 1;
+					vertical-align: top;
+					padding-left: $gutter/3;
+				}
+				@at-root .icon-study::after {
+					content: "Estudios";
+					line-height: 1;
+					vertical-align: top;
+					padding-left: $gutter/3;
+				}
+				@at-root .icon-work::after {
+					content: "Trabajos";
+					line-height: 1;
+					vertical-align: top;
+					padding-left: $gutter/3;
+				}
+			}
+		}
+	}
+}
+
+.menuSticky {
+	position: fixed;
+	top: 0;
+	// left: 0;
+	// right: 0;
+	background-color: color(bodyBg);
+	width: 100%;
+	// box-shadow: 0 1px 2px color(darkColor);
+
+	&-link {
+		color: color(textColor);
+	}
 }
