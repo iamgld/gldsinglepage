@@ -1,7 +1,9 @@
 @import "config/config";
-
 // Variables
 $heightBanner: 600px; // altura minima del banner
+
+
+@import "components/menu";
 
 .header {
 	background-color: color(firstColor);
@@ -13,7 +15,7 @@ $heightBanner: 600px; // altura minima del banner
 	min-height: $heightBanner;
 	position: relative;
 	margin-bottom: $gutter*3;
-	margin-bottom: 100em;
+	// margin-bottom: 100em;
 
 	&::before {
 		content: "";
@@ -24,5 +26,13 @@ $heightBanner: 600px; // altura minima del banner
 		clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 	}
 }
-@import "components/menu";
-// @import "components/bannerHeader";
+
+@import "components/bannerHeader";
+
+@import "components/aboutme";
+
+@import "components/studies";
+
+@import "components/jobs";
+
+@import "components/footer";

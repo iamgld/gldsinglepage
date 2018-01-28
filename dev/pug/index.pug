@@ -5,8 +5,14 @@ append config
 	-cssLink = "css/index.css"
 
 append body
+	include components/menu
 	header.header
-		include components/menu
-		//- include components/bannerHeader
+		include components/bannerHeader
+	main.content
+		include components/aboutme
+		include components/studies
+		include components/jobs
+	footer.footer
+		include components/footer
 append script
 	script(src="js/components/menu.js")

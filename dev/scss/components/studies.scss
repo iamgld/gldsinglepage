@@ -1,0 +1,115 @@
+.studies {
+	@include edContainer();
+	padding: 0 $gutter*2;
+	margin-bottom: $gutter*3;
+
+	@include from(m) {
+		padding: 0 $gutter*5;
+	}
+
+	&-title {
+		width: 100%;
+		font: text(t2) $openSans;
+		margin-top: 0;
+		margin-bottom: $gutter;
+		text-align: center;
+		color: color(firstColor);
+		border-bottom: 2px solid color(firstColor);
+	}
+
+	&-text {
+		margin: 0;
+		font: text(normal) $lato;
+		text-align: center;
+		color: color(textColor);
+	}
+
+	&_box {
+		width: 100%;
+		margin-top: $gutter;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&-bar {
+			@include edItem(70,40,20);
+			padding: 0;
+			height: rem(40px);
+			// width: 70%;
+			margin: $gutter;
+			// padding: rem(5px);
+			border-radius: rem(10px);
+			background-color: lighten(color(darkColor), 65%);
+			position: relative;
+			overflow: hidden;
+
+			&::before {
+				content: "";
+				height: rem(40px);
+				position: absolute;
+				color: color(darkColor);
+				font: text(normal) $openSans;
+				text-transform: uppercase;
+				text-align: center;
+				line-height: rem(40px);
+				// Diseño de fondo de las bars
+				background-size: 30px 30px;
+				background-image: linear-gradient(135deg,
+									rgba(255, 255, 255, .15) 25%,
+									transparent 25%, transparent 50%,
+									rgba(255, 255, 255, .15) 50%,
+									rgba(255, 255, 255, .15) 75%,
+									transparent 75%, transparent);
+				// Animacion del fondo de las bars
+				animation: animationBarsOne 3s linear infinite;
+
+				@keyframes animationBarsOne {
+					form {background-position: 0 0;}
+					to {background-position: 60px 0;}
+				}
+			}
+
+			&::after {
+				content: "";
+				height: rem(40px);
+				background-color: color(bodyBg);
+				position: absolute;
+				// Segunda animacion en las barras 
+				animation: animationBarsTwo 2s ease-out infinite;
+
+				@keyframes animationBarsTwo {
+					from {opacity: 0;width:0;}
+					50% {opacity: .3;}
+					to {opacity: 0;width:100%;}
+				}
+			}
+
+			// Variables que definen el ancho interior de cada barra
+			$widthHtml: 70%;
+			$widthCss: 70%;
+			$widthJs: 40%;
+			$widthGit: 65%;
+
+			&:nth-child(1)::before {
+				content: "html";
+				width: $widthHtml;
+				background-color: color(html);
+			}
+			&:nth-child(2)::before {
+				content: "css";
+				width: $widthCss;
+				background-color: color(css);
+			}
+			&:nth-child(3)::before {
+				content: "js";
+				width: $widthJs;
+				background-color: color(js);
+			}
+			&:nth-child(4)::before {
+				content: "git";
+				width: $widthGit;
+				background-color: color(git);
+			}
+		}
+	}
+}

@@ -1,6 +1,8 @@
 .menu {
-	@include full;
-	position: relative;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: zindex(three);
 	
 	&_list {
 		@include edContainer;
@@ -13,7 +15,6 @@
 		list-style: none;
 
 		&-item {
-			// border: 1px solid green;
 			text-align: center;
 			grid-column: span 3;
 
@@ -80,12 +81,9 @@
 
 .menuSticky {
 	position: fixed;
-	top: 0;
-	// left: 0;
-	// right: 0;
 	background-color: color(bodyBg);
 	width: 100%;
-	// box-shadow: 0 1px 2px color(darkColor);
+	box-shadow: 0 0 2px color(darkColor);
 
 	&-link {
 		color: color(textColor);
