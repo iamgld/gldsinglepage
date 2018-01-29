@@ -1,2 +1,2 @@
 # gregorlopezdev
-Desarrollador Frontend padawan
+Desarrollador Frontend Padawan
