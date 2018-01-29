@@ -1,0 +1,54 @@
+.bannerFooter {
+	@include edContainer();
+	position: relative;
+	// background-color: red;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	color: color(bodyBg);
+	font: text(normal) $lato;
+
+	&_contact {
+		// background-color: green;
+		grid-column: span 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+		@include from(m) {
+			grid-column: span 1;
+		}
+		&-text {
+			margin: $gutter/3 0;
+		}
+	}
+	&_social {
+		// background-color: salmon;
+		grid-column: span 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include from(m) {
+			grid-column: span 1;
+		}
+		&-link {
+			margin: $gutter/3 0;
+			line-height: .1;
+			font-size: text(t1)*2;
+			color: color(bodyBg);
+			
+			&:hover {
+				text-decoration: none;
+				color: color(secondColor);
+			}
+		}
+	}
+	&_copyright {
+		// background-color: sandybrown;
+		grid-column: span 2;
+		margin-bottom: 0;
+		text-align: center;
+		font-size: text(smaller);
+	}
+}

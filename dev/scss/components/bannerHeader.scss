@@ -1,5 +1,5 @@
 
-.banner {
+.bannerHeader {
 	@include edContainer();
 	padding: $gutter*3 $gutter $gutter*5;
 	position: relative;
