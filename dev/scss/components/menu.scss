@@ -39,7 +39,7 @@
 			font-size: text(small);
 			
 			&:hover {
-				color: color(secondColor);
+				color: color(alertColor);
 				text-decoration: none;
 			}
 
@@ -56,7 +56,7 @@
 					vertical-align: top;
 					padding-left: $gutter/3;
 				}
-				@at-root .icon-me::after {
+				@at-root .icon-personal::after {
 					content: "Personal";
 					line-height: 1;
 					vertical-align: top;

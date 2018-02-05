@@ -22,5 +22,38 @@
 		font: text(normal) $lato;
 		text-align: center;
 		color: color(textColor);
+
+		& > span {
+			font-style: italic;
+		}
+		& > strong {
+			color: rgba(color(firstColor), .8);
+		}
+		&:last-of-type {
+			display: none;
+			&.active {
+				display: block;
+				width: 100%;
+				padding-top: $gutter/2;
+				padding-bottom: $gutter/2;
+				margin-top: $gutter;
+				color: color(firstColor);
+				background-color: color(borderColor);
+				border-right: 3px solid color(firstColor);
+				border-left: 3px solid color(firstColor);
+			}
+		}
+	}
+	&-button {
+		text-align: center;
+		margin-top: $gutter;
+		margin-left: auto;
+		margin-right: auto;
+		color: color(firstColor);
+		font-size: text(t3);
+		cursor: pointer;
 	}
 }
+// #aboutme p:last-of-type {
+// 	background-color: red;
+// }

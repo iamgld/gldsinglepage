@@ -4,7 +4,7 @@
 
 // Config of bannerHeader
 $heightBH: 600px; // height min
-$bgImageOfBH: url(../images/banner1.jpeg); // Background image
+$bgImageOfBH: url(../images/banner2.jpeg); // Background image
 $bgColorOfBH: color(firstColor); // preview color of de background image
 $bgPositionImageBH: center bottom; // Position of the background image
 $layerColorBH: rgba(color(firstColor), .8); // Color layor of the background image
@@ -18,7 +18,4 @@ $layerColorBF: rgba(color(firstColor), .8); // Color layor of the background ima
 
 @import "components/menu";
 @import "templates/bannerHeader";
-@import "components/aboutme";
-@import "components/studies";
-@import "components/jobs";
 @import "templates/bannerFooter";

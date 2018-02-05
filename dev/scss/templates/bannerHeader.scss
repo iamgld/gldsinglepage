@@ -1,0 +1,45 @@
+// Background image and color layer
+.header {
+	background-color: $bgColorOfBH;
+	background-image: $bgImageOfBH;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: $bgPositionImageBH;
+	clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+	min-height: $heightBH;
+	position: relative;
+	margin-bottom: $gutter*3;
+	&::before {
+		content: "";
+		width: 100%;
+		min-height: $heightBH;
+		position: absolute;
+		background-color: $layerColorBH;
+		clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+	}
+}
+// Content bannerHeader
+.bannerHeader {
+	@include edContainer();
+	padding: $gutter*3 $gutter $gutter*5;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	min-height: $heightBH;
+	&_title {
+		text-align: center;
+		font: text(t1) $openSans;
+		&-one {
+			margin: 0 0 $gutter/2;
+			color: color(bodyBg);
+		}
+	}
+	&_content {
+		text-align: center;
+		font: text(normal) $lato;
+		&-one, &-two {
+			margin: 0;
+			color: color(bodyBg);
+		}
+	}
+}

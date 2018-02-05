@@ -1,3 +1,27 @@
+// Background image and color layer
+.footer {
+	background-color: $bgColorOfBF;
+	background-image: $bgImageOfBF;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: $bgPositionImageBF;
+	clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+	min-height: $heightBF;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&::before {
+		content: "";
+		width: 100%;
+		min-height: $heightBF;
+		position: absolute;
+		background-color: $layerColorBF;
+		clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+	}
+}
+// Content bannerFooter
 .bannerFooter {
 	@include edContainer();
 	position: relative;
@@ -40,7 +64,7 @@
 			
 			&:hover {
 				text-decoration: none;
-				color: color(secondColor);
+				color: color(alertColor);
 			}
 		}
 	}

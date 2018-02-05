@@ -1,19 +1,18 @@
 extends templates/templateBase
 
 append config
-	-pageTitle = "Gregorlopezdev"
-	-cssLink = "css/index.css"
+	-pageTitle = "GLD-Personal"
+	-cssLink = "css/personal.css"
 
 append body
 	include components/menu
 	header.header
-		include components/bannerHeader-index
+		include components/bannerHeader-personal
 	main.content
-		include components/aboutme
-		include components/studies
-		include components/jobs
+		//- include components/aboutme
+		//- include components/studies
+		//- include components/jobs
 	footer.footer
 		include templates/bannerFooter
 append script
-	script(src="js/index.js")
 	script(src="js/components/menu.js")
