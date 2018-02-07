@@ -25,9 +25,17 @@
 			
 			&:first-child {
 				grid-column: span 12;
+				margin-bottom: $gutter/2;
+
+				& > .logo {
+					font: text(t2) $fontLogo;
+					padding: 0;
+				}
 				
 				@include from(l) {
+					padding-left: $gutter;
 					text-align: left;
+					margin-bottom: 0;
 					grid-column: span 8;
 				}
 			}
@@ -44,35 +52,37 @@
 			}
 
 			@include from(m) {
-				@at-root .icon-globe::after {
-					content: "Home";
-					line-height: 1;
-					vertical-align: top;
-					padding-left: $gutter/3;
-				}
 				@at-root .icon-guide::after {
 					content: "Guia";
-					line-height: 1;
-					vertical-align: top;
+					vertical-align: middle;
 					padding-left: $gutter/3;
+				}
+				@at-root .icon-guide::before {
+					vertical-align: middle;
 				}
 				@at-root .icon-personal::after {
 					content: "Personal";
-					line-height: 1;
-					vertical-align: top;
+					vertical-align: middle;
 					padding-left: $gutter/3;
+				}
+				@at-root .icon-personal::before {
+					vertical-align: middle;
 				}
 				@at-root .icon-study::after {
 					content: "Estudios";
-					line-height: 1;
-					vertical-align: top;
+					vertical-align: middle;
 					padding-left: $gutter/3;
+				}
+				@at-root .icon-study::before {
+					vertical-align: middle;
 				}
 				@at-root .icon-work::after {
 					content: "Trabajos";
-					line-height: 1;
-					vertical-align: top;
+					vertical-align: middle;
 					padding-left: $gutter/3;
+				}
+				@at-root .icon-work::before {
+					vertical-align: middle;
 				}
 			}
 		}

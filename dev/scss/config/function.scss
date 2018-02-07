@@ -20,7 +20,9 @@ $colors: (
 };
 
 // Typografia del proyecto
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700|Megrim');
+// Fuente del logo
+$fontLogo: 'Megrim', cursive;
 // Titulos
 $openSans: 'Open Sans', sans-serif;
 // Texto 

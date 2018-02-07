@@ -1,7 +1,10 @@
 @import "config/config";
 
-// Variables of bannerHeader and bannerFooter
+body {
+	background-color: color(bodyBg);
+}
 
+// Variables of bannerHeader and bannerFooter
 // Config of bannerHeader
 $heightBH: 600px; // height min
 $bgImageOfBH: url(../images/banner1.jpeg); // Background image
