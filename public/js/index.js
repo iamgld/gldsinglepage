@@ -10,3 +10,15 @@ var changeDirectionAboutmeButton = function changeDirectionAboutmeButton(element
 	});
 };
 changeDirectionAboutmeButton(aboutme);
+
+var changeDirectionStudiesArrowIndicator = function changeDirectionStudiesArrowIndicator(element) {
+	element.addEventListener('click', function (e) {
+		var target = e.target;
+		if (target.classList.contains('studies-details_title')) {
+			target.parentNode.lastChild.classList.toggle('active');
+			target.classList.toggle('icon-arrow-double-right');
+			target.classList.toggle('icon-arrow-double-down');
+		}
+	});
+};
+changeDirectionStudiesArrowIndicator(studies);

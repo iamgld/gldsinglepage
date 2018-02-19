@@ -76,12 +76,12 @@
 				@at-root .icon-study::before {
 					vertical-align: middle;
 				}
-				@at-root .icon-work::after {
-					content: "Trabajos";
+				@at-root .icon-experience::after {
+					content: "Experiencia";
 					vertical-align: middle;
 					padding-left: $gutter/3;
 				}
-				@at-root .icon-work::before {
+				@at-root .icon-experience::before {
 					vertical-align: middle;
 				}
 			}

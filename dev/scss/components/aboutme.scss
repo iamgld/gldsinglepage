@@ -1,7 +1,7 @@
 .aboutme {
 	@include edContainer();
-	padding: 0 $gutter*2;
-	margin-bottom: $gutter*3;
+	padding: 0 $gutter;
+	margin-bottom: ($gutter * 3);
 	
 	@include from(m) {
 		padding: 0 $gutter*5;
@@ -34,13 +34,13 @@
 			&.active {
 				display: block;
 				width: 100%;
-				padding-top: $gutter/2;
-				padding-bottom: $gutter/2;
+				padding: $gutter/2;
 				margin-top: $gutter;
-				color: color(firstColor);
+				color: color(textColor);
 				background-color: color(borderColor);
-				border-right: 3px solid color(firstColor);
-				border-left: 3px solid color(firstColor);
+				border-right: 2px solid color(firstColor);
+				border-left: 2px solid color(firstColor);
+				border-radius: em(3px);
 			}
 		}
 	}

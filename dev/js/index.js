@@ -9,3 +9,15 @@ const changeDirectionAboutmeButton = function (element) {
 	})
 }
 changeDirectionAboutmeButton(aboutme)
+
+const changeDirectionStudiesArrowIndicator = function (element) {
+	element.addEventListener('click', (e) => {
+		let target = e.target
+		if(target.classList.contains('studies-details_title')) {
+			target.parentNode.lastChild.classList.toggle('active')
+			target.classList.toggle('icon-arrow-double-right')
+			target.classList.toggle('icon-arrow-double-down')
+		}
+	})
+}
+changeDirectionStudiesArrowIndicator(studies)
