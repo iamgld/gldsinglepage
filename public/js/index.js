@@ -5,8 +5,8 @@ var changeDirectionAboutmeButton = function changeDirectionAboutmeButton(element
 	    button = element.querySelector('.aboutme-button');
 	button.addEventListener('click', function (e) {
 		textHidden.classList.toggle('active');
-		button.classList.toggle('icon-arrow-double-down');
-		button.classList.toggle('icon-arrow-double-up');
+		button.classList.toggle('icon-arrow-down');
+		button.classList.toggle('icon-arrow-up');
 	});
 };
 changeDirectionAboutmeButton(aboutme);
@@ -16,8 +16,8 @@ var changeDirectionStudiesArrowIndicator = function changeDirectionStudiesArrowI
 		var target = e.target;
 		if (target.classList.contains('studies-details_title')) {
 			target.parentNode.lastChild.classList.toggle('active');
-			target.classList.toggle('icon-arrow-double-right');
-			target.classList.toggle('icon-arrow-double-down');
+			target.classList.toggle('icon-arrow-right');
+			target.classList.toggle('icon-arrow-down');
 		}
 	});
 };
