@@ -20,4 +20,70 @@ var setMenuSticky = function setMenuSticky(menuIdentifier) {
 		}
 	});
 };
-setMenuSticky(menuSticky);
+setMenuSticky(menu);
+
+var eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIdentifier) {
+	menuIdentifier.addEventListener('click', function (e) {
+		if (e.target.hash && document.title == 'Gregorlopezdev') {
+			e.preventDefault();
+			var hash = e.target.hash.slice(1);
+			if (document.getElementById(hash)) {
+				initScroll(hash, menuIdentifier);
+			}
+		}
+	});
+};
+var initScroll = function initScroll(hash, menuIdentifier) {
+	var destination = document.getElementById(hash).offsetTop,
+	    scroll = window.scrollY,
+	    speed = 20;
+	var menuIdentifierHeight = menuIdentifier ? menuIdentifier.clientHeight : 0;
+	destination -= menuIdentifierHeight;
+	var scroller = setInterval(function () {
+		if (destination >= scroll) {
+			scroll += speed;
+			window.scroll(0, scroll);
+			if (destination <= scroll) {
+				clearInterval(scroller);
+			}
+		}
+		if (destination <= scroll) {
+			scroll -= speed;
+			window.scroll(0, scroll);
+			if (destination >= scroll) {
+				clearInterval(scroller);
+			}
+		}
+	}, 10);
+};
+eventClickForSmoothScrolling(menu);
+
+var scrollup = function scrollup(button) {
+	var hash = button.parentNode.id;
+	scrollupButton.addEventListener('click', function (e) {
+		initScroll(hash);
+	});
+};
+var scrollupEvent = function scrollupEvent(limit, button) {
+	var heightLimit = limit.clientHeight,
+	    heightScroll = void 0;
+	var scrollerDown = setInterval(function () {
+		heightScroll = window.scrollY;
+		if (heightLimit <= heightScroll) {
+			clearInterval(scrollerDown);
+			button.classList.toggle('active');
+			scrollup(button);
+			var scrollerUp = setInterval(function () {
+				var heightScroll = window.scrollY;
+				if (heightLimit >= heightScroll) {
+					clearInterval(scrollerUp);
+					button.classList.toggle('active');
+					scrollupEvent(limit, button);
+				}
+			}, 500);
+		}
+	}, 500);
+};
+// Primer parametro elemento el cual sera el limite para que aparesca el button
+// Segundo parametro elemento donde esta el buttom
+scrollupEvent(bannerHeader, scrollupButton);

@@ -77,18 +77,19 @@
 			padding: 0;
 			height: rem(40px);
 			margin: $gutter;
-			border-radius: rem(10px);
-			background-color: lighten(color(darkColor), 65%);
+			border-radius: rem(3px);
+			background-color: color(borderColor);
 			position: relative;
 			overflow: hidden;
 			&::before {
 				content: "";
 				height: rem(40px);
 				position: absolute;
-				color: color(darkColor);
-				font: text(normal) $openSans;
+				font: text(normal) $lato;
 				text-transform: uppercase;
+				color: color(textColor);
 				text-align: center;
+				// font-weight: 100;
 				line-height: rem(40px);
 				// Diseño de fondo de las bars
 				background-size: 30px 30px;

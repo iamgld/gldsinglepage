@@ -87,6 +87,21 @@
 			}
 		}
 	}
+	&_scrollup {
+		display: none;
+		position: fixed;
+		bottom: 5%;
+		right: 5%;
+		padding: $gutter / 3;
+		color: color(bodyBg);
+		font-size: text(normal);
+		background-color: color(firstColor);
+		border-radius: em(2px);
+		cursor: pointer;
+		&.active {
+			display: block;
+		}
+	}
 }
 
 .menuSticky {
