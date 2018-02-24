@@ -13,10 +13,12 @@ changeDirectionAboutmeButton(aboutme)
 const changeDirectionStudiesArrowIndicator = function (element) {
 	element.addEventListener('click', (e) => {
 		let target = e.target
+		// console.log(target);
 		if(target.classList.contains('studies-details_title')) {
-			target.parentNode.lastChild.classList.toggle('active')
-			target.classList.toggle('icon-arrow-right')
-			target.classList.toggle('icon-arrow-down')
+			// console.dir(target)
+			target.nextSibling.classList.toggle('active')
+			target.previousSibling.classList.toggle('icon-arrow-right')
+			target.previousSibling.classList.toggle('icon-arrow-down')
 		}
 	})
 }

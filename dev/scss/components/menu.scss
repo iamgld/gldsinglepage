@@ -45,6 +45,7 @@
 			display: inline-block;
 			padding: em(5px);
 			font-size: text(small);
+			// position: relative;
 			
 			&:hover {
 				color: color(alertColor);
@@ -52,45 +53,35 @@
 			}
 
 			@include from(m) {
-				// @at-root .icon-home::after {
-				// 	content: "Home";
-				// 	vertical-align: middle;
-				// 	padding-left: $gutter/3;
-				// }
-				// @at-root .icon-home::before {
-				// 	vertical-align: middle;
-				// }
-				@at-root .icon-guide::after {
-					content: "Guia";
-					vertical-align: middle;
-					padding-left: $gutter/3;
-				}
-				@at-root .icon-guide::before {
-					vertical-align: middle;
-				}
-				@at-root .icon-projects::after {
-					content: "Proyectos";
-					vertical-align: middle;
-					padding-left: $gutter/3;
-				}
-				@at-root .icon-projects::before {
-					vertical-align: middle;
-				}
 				@at-root .icon-study::after {
 					content: "Estudios";
-					vertical-align: middle;
-					padding-left: $gutter/3;
-				}
-				@at-root .icon-study::before {
-					vertical-align: middle;
+					// vertical-align: middle;
+					// padding-left: $gutter/3;
 				}
 				@at-root .icon-experience::after {
 					content: "Experiencia";
-					vertical-align: middle;
-					padding-left: $gutter/3;
+					// vertical-align: middle;
+					// padding-left: $gutter/3;
 				}
-				@at-root .icon-experience::before {
-					vertical-align: middle;
+				@at-root .icon-projects::after {
+					content: "Proyectos";
+					// vertical-align: middle;
+					// padding-left: $gutter/3;
+				}
+				@at-root .icon-guide::after {
+					content: "Guia";
+					// vertical-align: middle;
+					// padding-left: $gutter/3;
+				}
+				@at-root .icon-experience::before,
+				.icon-guide::before,
+				.icon-projects::before,
+				.icon-study::before {
+					// vertical-align: unset;
+					position: relative;
+					// left: -20px;
+					top: 1px;
+					margin-right: $gutter / 3;
 				}
 			}
 		}

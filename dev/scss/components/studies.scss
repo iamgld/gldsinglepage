@@ -37,6 +37,7 @@
 		// margin-top: $gutter;
 		font: text(normal) $openSans;
 		text-align: center;
+		// position: relative;
 		@include from(m) {
 			width: 50%;
 		}
@@ -64,6 +65,11 @@
 				text-decoration: none;
 				color: color(secondColor);
 			}
+		}
+		& > .icon-arrow-right, & > .icon-arrow-down {
+			position: relative;
+			cursor: pointer;
+			top: 2px;
 		}
 	}
 	&_box {
