@@ -22,11 +22,14 @@ var setMenuSticky = function setMenuSticky(menuIdentifier) {
 };
 setMenuSticky(menu);
 
+// TODO Refactorisar
+
 var eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIdentifier) {
 	menuIdentifier.addEventListener('click', function (e) {
 		if (e.target.hash && document.title == 'Gregorlopezdev') {
 			e.preventDefault();
 			var hash = e.target.hash.slice(1);
+			// console.dir(e.target);
 			if (document.getElementById(hash)) {
 				initScroll(hash, menuIdentifier);
 			}
@@ -36,9 +39,10 @@ var eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIde
 var initScroll = function initScroll(hash, menuIdentifier) {
 	var destination = document.getElementById(hash).offsetTop,
 	    scroll = window.scrollY,
-	    speed = 20;
+	    speed = 30;
 	var menuIdentifierHeight = menuIdentifier ? menuIdentifier.clientHeight : 0;
 	destination -= menuIdentifierHeight;
+	// console.log(hash);
 	var scroller = setInterval(function () {
 		if (destination >= scroll) {
 			scroll += speed;

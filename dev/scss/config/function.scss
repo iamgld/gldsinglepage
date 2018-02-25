@@ -13,7 +13,8 @@ $colors: (
 	css: #4ea4de,
 	js: #e9de4d,
 	git: #e7483f,
-	sass: #c6538c
+	sass: #c6538c,
+	shadow: rgba(0,0,0,.1)
 );
 // Funcion para extraer un color
 @function color($color) {
@@ -41,7 +42,7 @@ $texts: (
 @function text($text) {
 	@return map-get($texts, $text)
 };
-
+	
 // Lista de z-index
 $zindexs: (
 	one: 100,
@@ -53,4 +54,8 @@ $zindexs: (
 // Funcion para extraer un z-index
 @function zindex($zindex) {
 	@return map-get($zindexs, $zindex)
-}
+};
+// sombra para cajas
+$shadow: 0 1px 2px color(shadow);
+// Redodeado de bordes
+$radius: em(3px);

@@ -94,8 +94,8 @@
 		padding: $gutter / 3;
 		color: color(bodyBg);
 		font-size: text(normal);
-		background-color: color(firstColor);
-		border-radius: em(2px);
+		background-color: color(alertColor);
+		border-radius: $radius;
 		cursor: pointer;
 		&.active {
 			display: block;
@@ -107,7 +107,7 @@
 	position: fixed;
 	background-color: color(bodyBg);
 	width: 100%;
-	box-shadow: 0 0 2px color(darkColor);
+	box-shadow: $shadow;
 
 	&-link {
 		color: color(textColor);

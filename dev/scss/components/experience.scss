@@ -1,0 +1,26 @@
+.experience {
+	@include edContainer();
+	padding: 0 $gutter;
+	margin-bottom: ($gutter * 3);
+	
+	@include from(m) {
+		padding: 0 $gutter*5;
+	}
+	
+	&-title {
+		width: 100%;
+		font: text(t2) $openSans;
+		margin-top: 0;
+		margin-bottom: $gutter;
+		text-align: center;
+		border-bottom: 2px solid color(firstColor);
+		color: color(firstColor);
+	}
+	
+	&-text {
+		margin: 0;
+		font: text(normal) $lato;
+		text-align: center;
+		color: color(textColor);
+	}
+}

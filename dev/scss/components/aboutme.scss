@@ -40,7 +40,7 @@
 				background-color: color(borderColor);
 				border-right: 2px solid color(firstColor);
 				border-left: 2px solid color(firstColor);
-				border-radius: em(3px);
+				border-radius: $radius;
 			}
 		}
 	}

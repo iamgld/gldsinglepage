@@ -1,8 +1,8 @@
-.experience {
+.projects {
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
-
+	
 	@include from(m) {
 		padding: 0 $gutter*5;
 	}
@@ -13,12 +13,49 @@
 		margin-top: 0;
 		margin-bottom: $gutter;
 		text-align: center;
-		color: color(firstColor);
 		border-bottom: 2px solid color(firstColor);
+		color: color(firstColor);
 	}
 	
+	&-content {
+		font-family: $lato;
+		display: grid;
+		grid-template-columns: repeat(12,1fr);
+		grid-gap: $gutter;		
+		&_figure {
+			border-radius: $radius;
+			border: 1px solid color(borderColor);
+			box-shadow: $shadow;			
+			overflow: hidden;
+			margin: 0;
+			grid-column: 2 / span 10;
+			@include from(m) {
+				grid-column: span 6;
+			}
+			@include from(l) {
+				grid-column: span 4;
+			}
+		}
+		&_img {
+			display: block;
+		}
+		&_figcaption {
+			text-align: center;
+			padding: $gutter;
+		}
+		&_link {
+			color: color(textColor);
+			font-size: text(normal);
+			&:hover {
+				text-decoration: none;
+				color: color(alertColor);
+				cursor: pointer;
+			}
+		}
+	}
 	&-text {
-		margin: 0;
+		margin-top: 0;
+		margin-bottom: $gutter;		
 		font: text(normal) $lato;
 		text-align: center;
 		color: color(textColor);

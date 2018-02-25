@@ -43,7 +43,7 @@
 			grid-column: span 1;
 		}
 		&-text {
-			margin: $gutter/3 0;
+			margin: ($gutter/3) 0;
 		}
 	}
 	&_social {
@@ -57,7 +57,7 @@
 			grid-column: span 1;
 		}
 		&-link {
-			margin: $gutter/3 0;
+			margin: ($gutter/3) 0;
 			line-height: .1;
 			font-size: text(t1)*2;
 			color: color(bodyBg);
@@ -70,9 +70,25 @@
 	}
 	&_copyright {
 		// background-color: sandybrown;
+		// position: relative;
+		// top: em(50px);
 		grid-column: span 2;
-		margin-bottom: 0;
+		margin: $gutter 0;
 		text-align: center;
 		font-size: text(smaller);
+	}
+	&_bookshop {
+		grid-column: span 2;
+		text-align: center;	
+		// position: relative;
+		// top: em(50px);	
+		&-edgrid {
+			// display: inline-block;
+			&>img {
+				// display: block;
+				max-width: em(70px);
+				max-height: em(20px);
+			}
+		}
 	}
 }

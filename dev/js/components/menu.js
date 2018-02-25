@@ -18,12 +18,14 @@ const setMenuSticky = function(menuIdentifier) {
 }
 setMenuSticky(menu)
 
+// TODO Refactorisar
 
 const eventClickForSmoothScrolling = function(menuIdentifier) {
 	menuIdentifier.addEventListener('click', (e) => {
 		if (e.target.hash && document.title == 'Gregorlopezdev') { 
 			e.preventDefault()
 			let hash = e.target.hash.slice(1)
+			// console.dir(e.target);
 			if (document.getElementById(hash)) {
 				initScroll(hash, menuIdentifier)
 			}
@@ -33,9 +35,10 @@ const eventClickForSmoothScrolling = function(menuIdentifier) {
 const initScroll = function(hash, menuIdentifier) {
 	let destination = document.getElementById(hash).offsetTop,
 	scroll = window.scrollY,
-	speed = 20
+	speed = 30
 	let menuIdentifierHeight = menuIdentifier ? menuIdentifier.clientHeight : 0
 	destination -= menuIdentifierHeight
+	// console.log(hash);
 	const scroller = setInterval(() => {
 		if (destination >= scroll) {
 			scroll += speed

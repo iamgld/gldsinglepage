@@ -63,7 +63,7 @@
 			color: color(textColor);
 			&:hover {
 				text-decoration: none;
-				color: color(secondColor);
+				color: color(alertColor);
 			}
 		}
 		& > .icon-arrow-right, & > .icon-arrow-down {
@@ -83,7 +83,7 @@
 			padding: 0;
 			height: rem(40px);
 			margin: $gutter;
-			border-radius: rem(3px);
+			border-radius: $radius;
 			background-color: color(borderColor);
 			position: relative;
 			overflow: hidden;
