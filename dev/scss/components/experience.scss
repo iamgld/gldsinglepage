@@ -1,26 +1,150 @@
+$treeLimit: 400px;
+$alignment : -9px;
+
 .experience {
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
 	
 	@include from(m) {
-		padding: 0 $gutter*5;
+		padding: 0 ($gutter * 5);
+	}
+	@include from(l) {
+		padding: 0;
 	}
 	
-	&-title {
+	&_title {
 		width: 100%;
 		font: text(t2) $openSans;
 		margin-top: 0;
-		margin-bottom: $gutter;
+		margin-bottom: ($gutter * 2);
 		text-align: center;
 		border-bottom: 2px solid color(firstColor);
 		color: color(firstColor);
+
+		@include from(l) {
+			margin-bottom: ($gutter * 3);
+		}
 	}
 	
-	&-text {
+	&_text {
 		margin: 0;
 		font: text(normal) $lato;
 		text-align: center;
 		color: color(textColor);
+	}
+
+	&_content {
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		// grid-auto-rows: repeat(3,1fr);
+		grid-gap: $gutter;
+		width: 100%;
+		// margin-top: ($gutter * 3);
+		@include from($treeLimit) {
+			grid-gap: 0;
+		}
+		&-box {
+			grid-column: span 4;
+			padding: 0 ($gutter * 2);
+
+			@include from($treeLimit) {
+				padding: 0 $gutter;
+				position: relative;				
+
+				&::before {
+					content: "";
+					position: absolute;
+					width: 15px;
+					height: 15px;
+					border-radius: 50%;
+					background-color: color(borderColor);
+					top: 40%;
+					right: $alignment;
+				}
+				&:hover::before {
+					background-color: color(firstColor);
+				}
+				&:nth-child(even) {
+					right: 2px;
+					border-left: 3px solid color(borderColor);
+
+					&::before {
+						left: $alignment;
+					}
+				}
+				&:nth-child(odd) {
+					left: 1px;
+					border-right: 3px solid color(borderColor);
+				}
+
+				&:nth-child(1) {
+					grid-column: 1 / span 2;
+					grid-row: 1 / span 1;
+				}
+				&:nth-child(2) {
+					grid-column: 3 / span 2;
+					grid-row: 2 / span 1;
+				}
+				&:nth-child(3) {
+					grid-column: 1 / span 2;
+					grid-row: 3 / span 1;
+				}
+				&:nth-child(4) {
+					grid-column: 3 / span 2;
+					grid-row: 4 / span 1;
+				}
+			}
+			@include from(l) {
+				&:nth-child(1) {
+					grid-column: 2 / span 1;
+					grid-row: 1 / span 1;
+				}
+				&:nth-child(2) {
+					grid-column: 3 / span 1;
+					grid-row: 2 / span 1;
+				}
+				&:nth-child(3) {
+					grid-column: 2 / span 1;
+					grid-row: 3 / span 1;
+				}
+				&:nth-child(4) {
+					grid-column: 3 / span 1;
+					grid-row: 4 / span 1;
+
+				}
+			}
+		}
+		&-title, &-text, &-footer  {
+			height: $gutter;
+			background-color: color(shadow); 
+			border-radius: $radius;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: ($gutter / 3);
+			margin-bottom: ($gutter / 3);
+			position: relative;
+			overflow: hidden;
+			
+			&::after {
+				content: "";
+				height: $gutter;
+				position: absolute;
+				background-color: color(bodyBg);
+				// Animacion de fondo en las barras 
+				animation: experienceBars 1s ease-in-out infinite;
+				@keyframes experienceBars {
+					from {opacity: 0;width:0;}
+					50% {opacity: .3;}
+					to {opacity: 0;width:100%;}
+				}
+			}
+		}
+		&-title {
+			width: 80%;
+		}
+		&-footer {
+			width: 60%;
+		}
 	}
 }

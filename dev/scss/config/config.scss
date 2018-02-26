@@ -3,13 +3,15 @@ $cssCore    : false;
 $cssHelpers : false;
 $devMode    : false;
 // Breakpoints
-$breakpoints : (
-  s  : em(320px),
-  m  : em(640px),
-  l  : em(1024px),
-  xl : em(1440px)
-);
-// $gutter : em(16px);
+// $breakpoints : (
+//   xs: 0,
+//   s  : 320px,
+//   m  : 640px,
+//   l  : 1024px,
+//   xl : 1440px
+// );
+// Seperación horizontal entre items (*2)
+$gutter : 16px;
 @import "ed-grid/ed-grid";
 
 // configuraciones de gregorlopezdev

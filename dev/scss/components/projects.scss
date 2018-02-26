@@ -16,6 +16,13 @@
 		border-bottom: 2px solid color(firstColor);
 		color: color(firstColor);
 	}
+	&-text {
+		margin-top: 0;
+		margin-bottom: ($gutter * 2);		
+		font: text(normal) $lato;
+		text-align: center;
+		color: color(textColor);
+	}
 	
 	&-content {
 		font-family: $lato;
@@ -52,12 +59,5 @@
 				cursor: pointer;
 			}
 		}
-	}
-	&-text {
-		margin-top: 0;
-		margin-bottom: $gutter;		
-		font: text(normal) $lato;
-		text-align: center;
-		color: color(textColor);
 	}
 }

@@ -37,6 +37,7 @@
 		// margin-top: $gutter;
 		font: text(normal) $openSans;
 		text-align: center;
+		margin-bottom: $gutter;
 		// position: relative;
 		@include from(m) {
 			width: 50%;
@@ -74,7 +75,7 @@
 	}
 	&_box {
 		width: 100%;
-		margin-top: $gutter;
+		// margin-top: $gutter;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -106,8 +107,8 @@
 									rgba(255, 255, 255, .15) 75%,
 									transparent 75%, transparent);
 				// Animacion del fondo de las bars
-				animation: animationBarsOne 3s linear infinite;
-				@keyframes animationBarsOne {
+				animation: studiesBarsOne 3s linear infinite;
+				@keyframes studiesBarsOne {
 					form {background-position: 0 0;}
 					to {background-position: 60px 0;}
 				}
@@ -118,8 +119,8 @@
 				background-color: color(bodyBg);
 				position: absolute;
 				// Segunda animacion en las barras 
-				animation: animationBarsTwo 2s ease-out infinite;
-				@keyframes animationBarsTwo {
+				animation: studiesBarsTwo 2s ease-out infinite;
+				@keyframes studiesBarsTwo {
 					from {opacity: 0;width:0;}
 					50% {opacity: .3;}
 					to {opacity: 0;width:100%;}

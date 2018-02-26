@@ -14,7 +14,8 @@ const sassOptions = {
 const postCSSPluging = [
     cssnano({
         autoprefixer: {
-            add: true
+            add: false,
+            browsers: ["last 10 versions", "ie >= 9"]
         }
     }),
 ]
