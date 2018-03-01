@@ -19,6 +19,10 @@
 		font: text(normal) $lato;
 		text-align: center;
 		color: color(textColor);
+		@include from(l) {
+			padding-right: ($gutter * 3);
+			padding-left: ($gutter * 3);
+		}
 
 		& > strong, & > a {
 			color: rgba(color(firstColor), .8);
@@ -26,7 +30,7 @@
 		}
 		& > a:hover {
 			text-decoration: none;
-			color: color(secondColor);
+			color: color(alertColor);
 		}
 		&:last-of-type {
 			width: 100%;
@@ -79,6 +83,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		@include from(l) {
+			padding-right: ($gutter * 2);
+			padding-left: ($gutter * 2);
+		}
+
 		&-bar {
 			@include edItem(80,40,30);
 			padding: 0;

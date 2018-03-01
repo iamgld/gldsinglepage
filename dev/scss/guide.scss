@@ -19,3 +19,12 @@ $layerColorBF: rgba(color(firstColor), .8); // Color layor of the background ima
 @import "components/menu";
 @import "templates/bannerHeader";
 @import "templates/bannerFooter";
+
+.content_title {
+    @include edContainer();
+    color: color(textColor);
+    font: text(t3) $lato;
+    margin: ($gutter * 5) auto;
+    padding: 0 ($gutter * 3);
+    text-align: center;
+}

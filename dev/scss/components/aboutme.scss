@@ -23,6 +23,11 @@
 		text-align: center;
 		color: color(textColor);
 
+		@include from(l) {
+			padding-right: ($gutter * 3);
+			padding-left: ($gutter * 3);
+		}
+
 		& > span {
 			font-style: italic;
 		}
@@ -34,13 +39,16 @@
 			&.active {
 				display: block;
 				width: 100%;
-				padding: $gutter/2;
-				margin-top: $gutter;
+				padding: ($gutter / 2);
+				margin: $gutter $gutter 0;
 				color: color(textColor);
 				background-color: color(borderColor);
 				border-right: 2px solid color(firstColor);
 				border-left: 2px solid color(firstColor);
 				border-radius: $radius;
+				@include from(l) {
+					margin: $gutter ($gutter * 3) 0;
+				}
 			}
 		}
 	}

@@ -9,9 +9,6 @@ $alignment : -9px;
 	@include from(m) {
 		padding: 0 ($gutter * 5);
 	}
-	@include from(l) {
-		padding: 0;
-	}
 	
 	&_title {
 		width: 100%;
@@ -63,7 +60,7 @@ $alignment : -9px;
 					right: $alignment;
 				}
 				&:hover::before {
-					background-color: color(firstColor);
+					background-color: color(alertColor);
 				}
 				&:nth-child(even) {
 					right: 2px;

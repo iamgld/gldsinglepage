@@ -6,7 +6,6 @@
 	@include from(m) {
 		padding: 0 $gutter*5;
 	}
-	
 	&-title {
 		width: 100%;
 		font: text(t2) $openSans;
@@ -22,6 +21,10 @@
 		font: text(normal) $lato;
 		text-align: center;
 		color: color(textColor);
+		@include from(l) {
+			padding-right: ($gutter * 3);
+			padding-left: ($gutter * 3);
+		}
 	}
 	
 	&-content {
