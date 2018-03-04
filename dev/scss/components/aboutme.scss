@@ -60,6 +60,16 @@
 		color: color(firstColor);
 		font-size: text(t3);
 		cursor: pointer;
+		position: relative;
+		animation: arrowTopDown 1s linear infinite;
+
+		@keyframes arrowTopDown {
+			0% { top: 0px}
+			25% { top: 2px}
+			// 50% { top: 0px}
+			75% { top: -2px}
+			100% { top: 0px}
+		}
 	}
 }
 // #aboutme p:last-of-type {

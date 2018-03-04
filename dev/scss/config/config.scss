@@ -17,3 +17,34 @@ $gutter : 16px;
 // configuraciones de gregorlopezdev
 @import "function";
 // @import "placeholder";
+
+// Typografia del proyecto
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700|Megrim');
+// Fuente del logo
+$fontLogo: 'Megrim', cursive;
+// Titulos
+$openSans: 'Open Sans', sans-serif;
+// Texto 
+$lato: 'Lato', sans-serif;
+
+// sombra para cajas
+$shadow: 0 1px 2px color(shadow);
+// Redodeado de bordes
+$radius: em(3px);
+
+// Animacion de las flechas
+$animationTopDown: animationTopDown 1s linear infinite;
+@keyframes animationTopDown {
+    0% { top: 0px}
+    25% { top: 2px}
+    75% { top: -2px}
+    100% { top: 0px}
+}
+
+$animationRightLeft: animationRightLeft 1s linear infinite;
+@keyframes animationRightLeft {
+    0% { left: 0px}
+    25% { left: 2px}
+    75% { left: -2px}
+    100% { left: 0px}
+}

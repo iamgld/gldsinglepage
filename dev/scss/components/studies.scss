@@ -56,10 +56,10 @@
 		}
 		&_content {
 			display: none;
-			margin-top: $gutter;
 			flex-direction: column;
 			&.active {
 				display: flex;
+				margin-top: $gutter;
 			}
 		}
 		&_link {
@@ -75,6 +75,12 @@
 			position: relative;
 			cursor: pointer;
 			top: 2px;
+		}
+		& > .icon-arrow-right {
+			animation: $animationRightLeft;
+		}
+		& > .icon-arrow-down {
+			animation: $animationTopDown;
 		}
 	}
 	&_box {

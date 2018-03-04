@@ -1,9 +1,8 @@
 
 const changeDirectionAboutmeButton = function (element) {
-	let textHidden = element.querySelector('p:last-of-type'),
-		button = element.querySelector('.aboutme-button')
-	button.addEventListener('click', (e) => {
-		textHidden.classList.toggle('active')
+	let button = element.querySelector('.aboutme-button')
+	button.addEventListener('mouseover', (e) => {
+		button.nextSibling.classList.toggle('active')
 		button.classList.toggle('icon-arrow-down')
 		button.classList.toggle('icon-arrow-up')
 	})
@@ -11,9 +10,9 @@ const changeDirectionAboutmeButton = function (element) {
 changeDirectionAboutmeButton(aboutme)
 
 const changeDirectionStudiesArrowIndicator = function (element) {
-	element.addEventListener('click', (e) => {
+	element.addEventListener('mouseover', (e) => {
 		let target = e.target
-		// console.log(target);
+		// console.dir(target);
 		if(target.classList.contains('studies-details_title')) {
 			// console.dir(target)
 			target.nextSibling.classList.toggle('active')

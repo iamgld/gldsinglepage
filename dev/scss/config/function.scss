@@ -16,19 +16,12 @@ $colors: (
 	sass: #c6538c,
 	shadow: rgba(0,0,0,.1)
 );
+
 // Funcion para extraer un color
 @function color($color) {
 	@return map-get($colors, $color)
 };
 
-// Typografia del proyecto
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700|Megrim');
-// Fuente del logo
-$fontLogo: 'Megrim', cursive;
-// Titulos
-$openSans: 'Open Sans', sans-serif;
-// Texto 
-$lato: 'Lato', sans-serif;
 // Tamaño de las fuentes
 $texts: (
 	t1: 36px,
@@ -38,11 +31,12 @@ $texts: (
 	small: 16px,
 	smaller: 14px
 );
+
 // Funcion para extraer el tamaño del texto
 @function text($text) {
 	@return map-get($texts, $text)
-};
-	
+};	
+
 // Lista de z-index
 $zindexs: (
 	one: 100,
@@ -51,11 +45,8 @@ $zindexs: (
 	four: 400,
 	five: 500
 );
+
 // Funcion para extraer un z-index
 @function zindex($zindex) {
 	@return map-get($zindexs, $zindex)
 };
-// sombra para cajas
-$shadow: 0 1px 2px color(shadow);
-// Redodeado de bordes
-$radius: em(3px);
