@@ -1,4 +1,6 @@
-// Background image and color layer
+// CONTENEDOR BANNERHEADER
+
+// ESTILOS QUE EL DAN FORMA AL ELEMENTO Y SU CAPA QUE SUPERPONE A LA IMAGEN
 .header {
 	background-color: $bgColorOfBH;
 	background-image: $bgImageOfBH;
@@ -18,7 +20,7 @@
 		clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 	}
 }
-// Content bannerHeader
+// ESTILOS PARA EL CONTENIDO DENTRO DE BANNERHEADER
 .bannerHeader {
 	@include edContainer();
 	padding: $gutter*3 $gutter $gutter*5;
@@ -26,18 +28,23 @@
 	flex-direction: column;
 	justify-content: center;
 	min-height: $heightBH;
-	&_title {
+
+	// SECCION DEL TITULO DEL HEADER
+	&-title {
 		text-align: center;
 		font: text(t1) $openSans;
-		&-one {
-			margin: 0 0 $gutter/2;
+		&_one {
+			margin: 0 0 ($gutter / 2);
 			color: color(bodyBg);
 		}
 	}
-	&_content {
+
+	// SECCION DEL CONTENIDO DEL HEADER
+	&-content {
 		text-align: center;
 		font: text(normal) $lato;
-		&-one, &-two {
+
+		&_one, &_two {
 			margin: 0;
 			color: color(bodyBg);
 		}

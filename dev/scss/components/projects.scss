@@ -1,61 +1,64 @@
+// CONTENERDOR PROJECTS
 .projects {
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
-	
+
 	@include from(m) {
 		padding: 0 $gutter*5;
 	}
+
+	// TITULO DE LA SECCION
 	&-title {
-		width: 100%;
-		font: text(t2) $openSans;
-		margin-top: 0;
-		margin-bottom: $gutter;
-		text-align: center;
-		border-bottom: 2px solid color(firstColor);
-		color: color(firstColor);
+		// ESTILOS POR DEFECTO DE LOS TITULOS DE CADA SECCION
+		@extend %titleSection;
 	}
+
+	// SECIONES DE TEXTO
 	&-text {
-		margin-top: 0;
-		margin-bottom: ($gutter * 2);		
-		font: text(normal) $lato;
-		text-align: center;
-		color: color(textColor);
-		@include from(l) {
-			padding-right: ($gutter * 3);
-			padding-left: ($gutter * 3);
-		}
+		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
+		@extend %textSection;
+		@extend %viewLarge;
 	}
-	
+
+	// CONTENEDOR DE LAS BOXES
 	&-content {
 		font-family: $lato;
 		display: grid;
 		grid-template-columns: repeat(12,1fr);
-		grid-gap: $gutter;		
+		grid-gap: $gutter;
+
+		// CADA UNA DE LAS BOX
 		&_figure {
 			border-radius: $radius;
 			border: 1px solid color(borderColor);
-			box-shadow: $shadow;			
+			box-shadow: $shadow;
 			overflow: hidden;
 			margin: 0;
 			grid-column: 2 / span 10;
+
 			@include from(m) {
 				grid-column: span 6;
 			}
+
 			@include from(l) {
 				grid-column: span 4;
 			}
 		}
+
 		&_img {
 			display: block;
 		}
+
 		&_figcaption {
 			text-align: center;
 			padding: $gutter;
 		}
+
 		&_link {
 			color: color(textColor);
 			font-size: text(normal);
+
 			&:hover {
 				text-decoration: none;
 				color: color(alertColor);

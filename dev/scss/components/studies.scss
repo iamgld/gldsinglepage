@@ -1,62 +1,64 @@
+// CONTENERDOR STUDIES
 .studies {
+
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
+
 	@include from(m) {
 		padding: 0 ($gutter * 5);
 	}
+
+	// TITULO DE LA SECCION
 	&-title {
-		width: 100%;
-		font: text(t2) $openSans;
-		margin-top: 0;
-		margin-bottom: $gutter;
-		text-align: center;
-		color: color(firstColor);
-		border-bottom: 2px solid color(firstColor);
+		@extend %titleSection;
 	}
+
+	// SECIONES DE TEXTO
 	&-text {
-		margin-top: 0;
-		font: text(normal) $lato;
-		text-align: center;
-		color: color(textColor);
-		@include from(l) {
-			padding-right: ($gutter * 3);
-			padding-left: ($gutter * 3);
-		}
+		@extend %textSection;
+		@extend %viewLarge;
 
 		& > strong, & > a {
 			color: rgba(color(firstColor), .8);
 			font-weight: bold;
 		}
+
 		& > a:hover {
 			text-decoration: none;
 			color: color(alertColor);
 		}
+
 		&:last-of-type {
-			width: 100%;
+			// width: 100%;
+			margin: $gutter auto;
 		}
 	}
+	// SECCIONES DE LOS CURSOS REALIZADOS
 	&-details {
 		width: 100%;
-		// margin-top: $gutter;
 		font: text(normal) $openSans;
 		text-align: center;
 		margin-bottom: $gutter;
-		// position: relative;
+
 		@include from(m) {
 			width: 50%;
 		}
+
 		&_title {
 			display: inline;
 			color: color(firstColor);
 			font-size: text(normal);
+
 			&:hover {
 				cursor: pointer;
 			}
 		}
+
 		&_content {
 			display: none;
 			flex-direction: column;
+
 			&.active {
 				display: flex;
 				margin-top: $gutter;
@@ -66,26 +68,30 @@
 			margin: 0 auto;
 			font: text(normal) $lato;
 			color: color(textColor);
+
 			&:hover {
 				text-decoration: none;
 				color: color(alertColor);
 			}
 		}
+
 		& > .icon-arrow-right, & > .icon-arrow-down {
 			position: relative;
 			cursor: pointer;
 			top: 2px;
 		}
+
 		& > .icon-arrow-right {
 			animation: $animationRightLeft;
 		}
+
 		& > .icon-arrow-down {
 			animation: $animationTopDown;
 		}
 	}
-	&_box {
+	// BOXES DE LAS TECNOLOGIAS
+	&-box {
 		width: 100%;
-		// margin-top: $gutter;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -95,7 +101,8 @@
 			padding-left: ($gutter * 2);
 		}
 
-		&-bar {
+		// PROPIEDADES DE CADA BARS
+		&_bar {
 			@include edItem(80,40,30);
 			padding: 0;
 			height: rem(40px);
@@ -104,7 +111,9 @@
 			background-color: color(borderColor);
 			position: relative;
 			overflow: hidden;
-			&::before {
+
+			// BOX BEFORE ANIMADA DE CADA BARS
+			&:before {
 				content: "";
 				height: rem(40px);
 				position: absolute;
@@ -114,7 +123,7 @@
 				text-align: center;
 				// font-weight: 100;
 				line-height: rem(40px);
-				// Diseño de fondo de las bars
+				// DISEÑO DEL FONDO DE LAS BARS
 				background-size: 30px 30px;
 				background-image: linear-gradient(135deg,
 									rgba(255, 255, 255, .15) 25%,
@@ -122,61 +131,65 @@
 									rgba(255, 255, 255, .15) 50%,
 									rgba(255, 255, 255, .15) 75%,
 									transparent 75%, transparent);
-				// Animacion del fondo de las bars
-				animation: studiesBarsOne 3s linear infinite;
-				@keyframes studiesBarsOne {
-					form {background-position: 0 0;}
-					to {background-position: 60px 0;}
-				}
+				// ANIMACION DEL FONDO DE LAS BARS
+				animation: $animationBarsOne;
 			}
-			&::after {
-				content: "";
-				height: rem(40px);
-				background-color: color(bodyBg);
-				position: absolute;
-				// Segunda animacion en las barras 
-				animation: studiesBarsTwo 2s ease-out infinite;
-				@keyframes studiesBarsTwo {
-					from {opacity: 0;width:0;}
-					50% {opacity: .3;}
-					to {opacity: 0;width:100%;}
-				}
-			}
-			// Variables que definen el ancho interior de cada barra
-			$widthHtml: 70%;
-			$widthCss: 70%;
+
+			// BOX AFTER ANIMADA DE CADA BARS
+			// &:after {
+				// content: "";
+				// height: rem(40px);
+				// background-color: color(bodyBg);
+				// position: absolute;
+				// // SEGUNDA ANIMACION EN LAS BARRAS
+				// animation: $animationBackBars;
+				// animation-duration: 2s;
+			// }
+
+			// VARIABLES QUE DEFINEN EL ANCHO INTERIOR DE CADA BARRA
+			$widthHtml: 80%;
+			$widthPug: 70%;
+			$widthCss: 80%;
+			$widthSass: 70%;
 			$widthJs: 50%;
-			$widthGit: 65%;
-			$widthSass: 60%;
-			&:nth-child(1)::before {
+			$widthGit: 70%;
+
+			// NOMBRE QUE MUESTRA CADA BARS
+			&:nth-child(1):before {
 				content: "html";
 				font-style: oblique;
 				width: $widthHtml;
 				background-color: color(html);
 			}
-			&:nth-child(2)::before {
+			&:nth-child(2):before {
 				content: "css";
-				font-style: oblique;				
+				font-style: oblique;
 				width: $widthCss;
 				background-color: color(css);
 			}
-			&:nth-child(3)::before {
+			&:nth-child(3):before {
 				content: "js";
 				width: $widthJs;
-				font-style: oblique;				
+				font-style: oblique;
 				background-color: color(js);
 			}
-			&:nth-child(4)::before {
-				content: "git";
-				width: $widthGit;
-				font-style: oblique;				
-				background-color: color(git);
+			&:nth-child(4):before {
+				content: "pug";
+				width: $widthPug;
+				font-style: oblique;
+				background-color: color(pug);
 			}
-			&:nth-child(5)::before {
+			&:nth-child(5):before {
 				content: "sass";
 				width: $widthSass;
-				font-style: oblique;				
+				font-style: oblique;
 				background-color: color(sass);
+			}
+			&:nth-child(6):before {
+				content: "git";
+				width: $widthGit;
+				font-style: oblique;
+				background-color: color(git);
 			}
 		}
 	}

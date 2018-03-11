@@ -1,3 +1,6 @@
+// CONTENERDOR EXPERIENCE
+
+// VARIABLES LOCALES
 $treeLimit: 400px;
 $alignment : -9px;
 
@@ -5,50 +8,44 @@ $alignment : -9px;
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
-	
+
 	@include from(m) {
 		padding: 0 ($gutter * 5);
 	}
-	
-	&_title {
-		width: 100%;
-		font: text(t2) $openSans;
-		margin-top: 0;
-		margin-bottom: ($gutter * 2);
-		text-align: center;
-		border-bottom: 2px solid color(firstColor);
-		color: color(firstColor);
 
-		@include from(l) {
-			margin-bottom: ($gutter * 3);
-		}
-	}
-	
-	&_text {
-		margin: 0;
-		font: text(normal) $lato;
-		text-align: center;
-		color: color(textColor);
+	// TITULO DE LA SECCION
+	&-title {
+		// ESTILOS POR DEFECTO DE LOS TITULOS DE CADA SECCION
+		@extend %titleSection;
 	}
 
-	&_content {
+	// SECIONES DE TEXTO
+	&-text {
+		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
+		@extend %textSection;
+	}
+
+	// BOX CONTENEDORA DEL TREE DE EXPERIENCE
+	&-content {
 		display: grid;
 		grid-template-columns: repeat(4,1fr);
-		// grid-auto-rows: repeat(3,1fr);
 		grid-gap: $gutter;
 		width: 100%;
-		// margin-top: ($gutter * 3);
+
 		@include from($treeLimit) {
 			grid-gap: 0;
 		}
-		&-box {
+
+		&_box {
 			grid-column: span 4;
 			padding: 0 ($gutter * 2);
 
+			// CAMBIA COMO SE VERA LA DISTRIBUCION DEL TREE EN UN PUNTO EXACTO
 			@include from($treeLimit) {
 				padding: 0 $gutter;
-				position: relative;				
+				position: relative;
 
+				// ESTILOS QUE CREAN EL PUNTO DE CADA BOX
 				&::before {
 					content: "";
 					position: absolute;
@@ -59,9 +56,12 @@ $alignment : -9px;
 					top: 40%;
 					right: $alignment;
 				}
+
 				&:hover::before {
 					background-color: color(alertColor);
 				}
+
+				// ESTILOS PARA POSICIONAR CADA PUNTO DE LAS BOX EN SU LUGAR
 				&:nth-child(even) {
 					right: 2px;
 					border-left: 3px solid color(borderColor);
@@ -70,11 +70,13 @@ $alignment : -9px;
 						left: $alignment;
 					}
 				}
+
 				&:nth-child(odd) {
 					left: 1px;
 					border-right: 3px solid color(borderColor);
 				}
 
+				// POSICION DE CADA BOX EN LA GRID
 				&:nth-child(1) {
 					grid-column: 1 / span 2;
 					grid-row: 1 / span 1;
@@ -92,6 +94,8 @@ $alignment : -9px;
 					grid-row: 4 / span 1;
 				}
 			}
+
+			// POSICION DE CADA BOX EN LA GRID EN VIEWLARGE
 			@include from(l) {
 				&:nth-child(1) {
 					grid-column: 2 / span 1;
@@ -112,9 +116,11 @@ $alignment : -9px;
 				}
 			}
 		}
-		&-title, &-text, &-footer  {
+
+		// ESTILOS COMPARTIDOS DE LOS ELEMENT QUE CONFORMAN CADA BOX
+		&_title, &_text, &_footer  {
 			height: $gutter;
-			background-color: color(shadow); 
+			background-color: color(shadow);
 			border-radius: $radius;
 			margin-left: auto;
 			margin-right: auto;
@@ -122,25 +128,21 @@ $alignment : -9px;
 			margin-bottom: ($gutter / 3);
 			position: relative;
 			overflow: hidden;
-			
+
 			&::after {
 				content: "";
 				height: $gutter;
 				position: absolute;
 				background-color: color(bodyBg);
-				// Animacion de fondo en las barras 
-				animation: experienceBars 1s ease-in-out infinite;
-				@keyframes experienceBars {
-					from {opacity: 0;width:0;}
-					50% {opacity: .3;}
-					to {opacity: 0;width:100%;}
-				}
+				// ANIMACION DE FONDO EN LAS BARRAS
+				animation: $animationBackBars;
 			}
 		}
-		&-title {
+
+		&_title {
 			width: 80%;
 		}
-		&-footer {
+		&_footer {
 			width: 60%;
 		}
 	}

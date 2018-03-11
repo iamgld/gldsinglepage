@@ -1,0 +1,31 @@
+// ANIMACIONES DE FECHAS
+$animationTopDown: animationTopDown 500ms linear infinite;
+@keyframes animationTopDown {
+    0% { top: 0px}
+    25% { top: 2px}
+    75% { top: -2px}
+    100% { top: 0px}
+}
+
+$animationRightLeft: animationRightLeft 500ms linear infinite;
+@keyframes animationRightLeft {
+    0% { left: 0px}
+    25% { left: 2px}
+    75% { left: -2px}
+    100% { left: 0px}
+}
+
+// ANIMACION DE LAS BARS
+$animationBarsOne: animationBarsOne 3s infinite;
+@keyframes animationBarsOne {
+    form {background-position: 0 0;}
+    to {background-position: 60px 0;}
+}
+
+// ANIMACION DE FONDO EN LAS BARS
+$animationBackBars: animationBackBars 1s infinite;
+@keyframes animationBackBars {
+    from {opacity: 0;width: 0}
+    40% {opacity: .3}
+    to {opacity: 0;width:100%;}
+}

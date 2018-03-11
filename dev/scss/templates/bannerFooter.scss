@@ -1,4 +1,6 @@
-// Background image and color layer
+// CONTENEDOR BANNERFOOTER
+
+// ESTILOS QUE EL DAN FORMA AL ELEMENTO Y SU CAPA QUE SUPERPONE A LA IMAGEN
 .footer {
 	background-color: $bgColorOfBF;
 	background-image: $bgImageOfBF;
@@ -12,7 +14,7 @@
 	justify-content: center;
 	align-items: flex-end;
 
-	&::before {
+	&:before {
 		content: "";
 		width: 100%;
 		min-height: $heightBF;
@@ -21,7 +23,7 @@
 		clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
 	}
 }
-// Content bannerFooter
+// ESTILOS PARA EL CONTENIDO DENTRO DE BANNERFOOTER
 .bannerFooter {
 	@include edContainer();
 	position: relative;
@@ -31,28 +33,29 @@
 	grid-template-columns: repeat(2, 1fr);
 	color: color(bodyBg);
 	font: text(normal) $lato;
-	
+
 	@include from(m) {
 		margin-bottom: ($gutter*2);
 	}
 
-	&_contact {
-		// background-color: green;
+	// SECCION DE CONTACTO
+	&-contact {
 		grid-column: span 2;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		
+
 		@include from(m) {
 			grid-column: span 1;
 		}
-		&-text {
+
+		&_text {
 			margin: ($gutter/3) 0;
 		}
 	}
-	&_social {
-		// background-color: salmon;
+	// SECCION DE REDES SOCIALES
+	&-social {
 		grid-column: span 2;
 		display: flex;
 		justify-content: center;
@@ -61,12 +64,13 @@
 		@include from(m) {
 			grid-column: span 1;
 		}
-		&-link {
+
+		&_link {
 			margin: ($gutter/3) 0;
 			line-height: .1;
 			font-size: (text(t1)*1.5);
 			color: color(bodyBg);
-			
+
 			&:hover {
 				text-decoration: none;
 				color: color(alertColor);
@@ -76,7 +80,9 @@
 			}
 		}
 	}
-	&_copyright {
+
+	// SECCION DE COPYRIGHT
+	&-copyright {
 		// background-color: sandybrown;
 		// position: relative;
 		// top: em(50px);
@@ -85,18 +91,19 @@
 		text-align: center;
 		font-size: text(smaller);
 	}
-	&_bookshop {
-		grid-column: span 2;
-		text-align: center;	
-		// position: relative;
-		// top: em(50px);	
-		&-edgrid {
-			// display: inline-block;
-			&>img {
-				// display: block;
-				max-width: em(70px);
-				max-height: em(20px);
-			}
-		}
-	}
+	// ESTILOS PARA EL lOGO DE EDGRID
+	// &-bookshop {
+	// 	grid-column: span 2;
+	// 	text-align: center;
+	// 	// position: relative;
+	// 	// top: em(50px);
+	// 	&_edgrid {
+	// 		// display: inline-block;
+	// 		&>img {
+	// 			// display: block;
+	// 			max-width: em(70px);
+	// 			max-height: em(20px);
+	// 		}
+	// 	}
+	// }
 }

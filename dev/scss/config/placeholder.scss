@@ -1,0 +1,35 @@
+// FRAGMENTOS DE CODIGO REUTILIZABLES EN EL PROYECTOS
+
+// -------------------ESTILOS COMPARTIDOS ENTRE SECCIONES-----------------------
+// ESTILOS PARA LOS TITULOS DE CADA SECCION
+%titleSection {
+    width: 100%;
+    font: text(t2) $openSans;
+    margin-top: 0;
+    margin-bottom: $gutter;
+    text-align: center;
+    color: color(firstColor);
+    border-bottom: 2px solid color(firstColor);
+}
+
+// ESTILOS PARA LOS TEXTOS INFORMATIVOS DE CADA SECCION
+%textSection {
+    margin: 0;
+    font: text(normal) $lato;
+    text-align: center;
+    color: color(textColor);
+}
+
+// ESTILOS POR DEFECTO EN LA VISTA LARGE DE CADA SECCION
+%viewLarge {
+	@include from(l) {
+		padding-right: ($gutter * 3);
+		padding-left: ($gutter * 3);
+	}
+}
+// -----------------END ESTILOS COMPARTIDOS ENTRE SECCIONES---------------------
+
+
+// ----------------------------SECTION ABOUTME---------------------------------
+
+// -------------------------END SECTION ABOUTME---------------------------------

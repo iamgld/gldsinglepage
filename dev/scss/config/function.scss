@@ -1,4 +1,4 @@
-// Paleta de colores del proyecto
+// DIFERENTES COLORES UTILIZADOS EN EL PROYECTO
 $colors: (
 	firstColor: #371b1c,
 	secondColor: #a5402d,
@@ -14,15 +14,16 @@ $colors: (
 	js: #e9de4d,
 	git: #e7483f,
 	sass: #c6538c,
+	pug: #efcca3,
 	shadow: rgba(0,0,0,.1)
 );
 
-// Funcion para extraer un color
+// FUNCION PARA EXTRAER COLOR
 @function color($color) {
 	@return map-get($colors, $color)
 };
 
-// Tamaño de las fuentes
+// DIFERENTES TAMAÑOS DE FUENTES DEL PROYECTO
 $texts: (
 	t1: 36px,
 	t2: 30px,
@@ -32,12 +33,12 @@ $texts: (
 	smaller: 14px
 );
 
-// Funcion para extraer el tamaño del texto
+// FUNCION PARA EXTRAER EL TAMAÑO DE LA FUENTE
 @function text($text) {
 	@return map-get($texts, $text)
-};	
+};
 
-// Lista de z-index
+// LISTA DE Z-INDEX
 $zindexs: (
 	one: 100,
 	two: 200,
@@ -46,7 +47,7 @@ $zindexs: (
 	five: 500
 );
 
-// Funcion para extraer un z-index
+// FUNCION PARA EXTRAER Z-INDEX
 @function zindex($zindex) {
 	@return map-get($zindexs, $zindex)
 };

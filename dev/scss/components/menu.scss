@@ -1,10 +1,12 @@
+// CONTENERDOR MENU
 .menu {
 	position: absolute;
 	left: 0;
 	right: 0;
 	z-index: zindex(three);
-	
-	&_list {
+
+	// ESTILOS DEL NAV DEL MENU
+	&-list {
 		@include edContainer;
 		margin: 0 auto;
 		width: 100%;
@@ -14,7 +16,8 @@
 		padding: $gutter 0;
 		list-style: none;
 
-		&-item {
+		// ESTILOS PARA CADA ITEM DEL MENU
+		&_item {
 			text-align: center;
 			grid-column: span 3;
 
@@ -22,16 +25,18 @@
 				grid-column: span 1;
 				text-align: left;
 			}
-			
+
+			// ESTILOS PARA EL PRIMER ITEM DEL MENU
+			// EL CUAL ES EL LOGO DEL PROYECTO
 			&:first-child {
 				grid-column: span 12;
-				margin-bottom: $gutter/2;
+				margin-bottom: ($gutter / 2);
 
 				& > .logo {
 					font: text(t2) $fontLogo;
 					padding: 0;
 				}
-				
+
 				@include from(l) {
 					padding-left: $gutter;
 					text-align: left;
@@ -40,57 +45,56 @@
 				}
 			}
 		}
-		&-link {
+
+		// ESTILOS PARA LOS ANCHOR DEL MENU
+		&_link {
 			color: color(bodyBg);
 			display: inline-block;
-			padding: em(5px);
+			padding: ($gutter / 3);
 			font-size: text(small);
 			// position: relative;
-			
+
 			&:hover {
 				color: color(alertColor);
 				text-decoration: none;
 			}
 
+			// TEXTO QUE ACOMPAÑA A LOS ICONOS DEL MENU APARTIR DE VIEWMEDIUM
 			@include from(m) {
 				@at-root .icon-study::after {
 					content: "Estudios";
-					// vertical-align: middle;
-					// padding-left: $gutter/3;
 				}
 				@at-root .icon-experience::after {
 					content: "Experiencia";
-					// vertical-align: middle;
-					// padding-left: $gutter/3;
 				}
 				@at-root .icon-projects::after {
 					content: "Proyectos";
-					// vertical-align: middle;
-					// padding-left: $gutter/3;
 				}
 				@at-root .icon-guide::after {
-					content: "Guia";
-					// vertical-align: middle;
-					// padding-left: $gutter/3;
+					content: "Guia";;
 				}
+				// ESTILOS QUE COMPARTEN TODOS LOS ICONOS
 				@at-root .icon-experience::before,
 				.icon-guide::before,
 				.icon-projects::before,
 				.icon-study::before {
-					// vertical-align: unset;
 					position: relative;
-					// left: -20px;
 					top: 1px;
 					margin-right: ($gutter / 3);
 				}
 			}
 		}
 	}
-	&_scrollup {
+
+	// ESTILOS DEL BUTTON SCROLLUP
+	&-scrollup {
 		display: none;
 		position: fixed;
+		// POSICION DE ACUERDO AL CHAT DE MESSENGER
+		// ------------------
 		bottom: 35px;
 		right: 55px;
+		// ------------------
 		padding: ($gutter / 3);
 		padding-right: ($gutter * 2);
 		color: color(bodyBg);
@@ -98,16 +102,19 @@
 		background-color: color(alertColor);
 		border-radius: $radius;
 		cursor: pointer;
+
 		&.active {
 			display: block;
 		}
+
 		& > span {
 			position: relative;
-			animation: $animationTopDown;		
+			animation: $animationTopDown;
 		}
 	}
 }
 
+// ESTILOS QUE HACEN QUE EL MENU SEA STICKY
 .menuSticky {
 	position: fixed;
 	background-color: color(bodyBg);

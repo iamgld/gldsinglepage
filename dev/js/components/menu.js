@@ -1,3 +1,4 @@
+// FUNCION QUE HACE AL MENU STICKY
 const setMenuSticky = function(menuIdentifier) {
 	let menuOffsetTop = menuIdentifier.offsetTop,
 		links = [...menuIdentifier.querySelectorAll('a')]
@@ -18,11 +19,13 @@ const setMenuSticky = function(menuIdentifier) {
 }
 setMenuSticky(menu)
 
+
+
 // TODO Refactorisar
 
 const eventClickForSmoothScrolling = function(menuIdentifier) {
 	menuIdentifier.addEventListener('click', (e) => {
-		if (e.target.hash && document.title == 'Gregorlopezdev') { 
+		if (e.target.hash && document.title == 'Gregorlopezdev') {
 			e.preventDefault()
 			let hash = e.target.hash.slice(1)
 			// console.dir(e.target);
@@ -35,14 +38,14 @@ const eventClickForSmoothScrolling = function(menuIdentifier) {
 const initScroll = function(hash, menuIdentifier) {
 	let destination = document.getElementById(hash).offsetTop,
 	scroll = window.scrollY,
-	speed = 30
+	speed = 40
 	let menuIdentifierHeight = menuIdentifier ? menuIdentifier.clientHeight : 0
 	destination -= menuIdentifierHeight
 	// console.log(hash);
 	const scroller = setInterval(() => {
 		if (destination >= scroll) {
 			scroll += speed
-			window.scroll(0, scroll)		
+			window.scroll(0, scroll)
 			if (destination <= scroll) {
 				clearInterval(scroller)
 			}
@@ -58,7 +61,6 @@ const initScroll = function(hash, menuIdentifier) {
 }
 eventClickForSmoothScrolling(menu)
 
-
 const scrollup = function (button) {
 	let hash = button.parentNode.id
 	scrollupButton.addEventListener('click', (e) => {
@@ -72,13 +74,13 @@ const scrollupEvent = function (limit,button) {
 		heightScroll = window.scrollY
 		if (heightLimit <= heightScroll) {
 			clearInterval(scrollerDown)
-			button.classList.toggle('active')			
+			button.classList.toggle('active')
 			scrollup(button)
 			const scrollerUp = setInterval(() => {
 				let heightScroll = window.scrollY
 				if (heightLimit >= heightScroll) {
-					clearInterval(scrollerUp)					
-					button.classList.toggle('active')			
+					clearInterval(scrollerUp)
+					button.classList.toggle('active')
 					scrollupEvent(limit,button)
 				}
 			},500)

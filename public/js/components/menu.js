@@ -2,6 +2,7 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+// FUNCION QUE HACE AL MENU STICKY
 var setMenuSticky = function setMenuSticky(menuIdentifier) {
 	var menuOffsetTop = menuIdentifier.offsetTop,
 	    links = [].concat(_toConsumableArray(menuIdentifier.querySelectorAll('a')));
@@ -39,7 +40,7 @@ var eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIde
 var initScroll = function initScroll(hash, menuIdentifier) {
 	var destination = document.getElementById(hash).offsetTop,
 	    scroll = window.scrollY,
-	    speed = 30;
+	    speed = 40;
 	var menuIdentifierHeight = menuIdentifier ? menuIdentifier.clientHeight : 0;
 	destination -= menuIdentifierHeight;
 	// console.log(hash);
