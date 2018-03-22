@@ -1,5 +1,5 @@
 // ANIMACIONES DE FECHAS
-$animationTopDown: animationTopDown 500ms linear infinite;
+/* $animationTopDown: animationTopDown 500ms linear infinite;
 @keyframes animationTopDown {
     0% { top: 0px}
     25% { top: 2px}
@@ -13,7 +13,7 @@ $animationRightLeft: animationRightLeft 500ms linear infinite;
     25% { left: 2px}
     75% { left: -2px}
     100% { left: 0px}
-}
+} */
 
 // ANIMACION DE LAS BARS
 $animationBarsOne: animationBarsOne 3s infinite;

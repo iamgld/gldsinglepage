@@ -1,4 +1,4 @@
-extends templates/templateBase
+extends ../templates/templateBase
 
 //- TITULO Y ENLACE A LA HOJA DE ESTILOS DE ESTE DOCUMENTO
 append config
@@ -6,12 +6,12 @@ append config
 	-cssLink = "css/guide.css"
 
 append body
-	include components/menu
+	include ../components/menu
 	header.header
-		include components/bannerHeader-guide
+		include ../components/bannerHeader-guide
 	section.content
 		h2.content_title Esta pagina aun esta en construcción, no desesperes el camino a ser un Maestro Jedi toma su tiempo. 
 	footer.footer
-		include templates/bannerFooter
+		include ../templates/bannerFooter
 append script
-	script(src="js/components/menu.js")
+	script(src="js/scripts.js")

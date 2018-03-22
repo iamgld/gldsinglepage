@@ -1,5 +1,17 @@
+// Este es un ejemplo de como exportar funciones desde un archivo
+// En index.js se importan estas funciones
+
+// export const saludo = () => {
+// 	console.log('Hola mundo')
+//   };
+  
+//   export const despedida = () => {
+// 	console.log('Adiós mundo')
+//   };
+  
+
 // FUNCION QUE HACE AL MENU STICKY
-const setMenuSticky = function(menuIdentifier) {
+export const setMenuSticky = function(menuIdentifier) {
 	let menuOffsetTop = menuIdentifier.offsetTop,
 		links = [...menuIdentifier.querySelectorAll('a')]
 	window.addEventListener('scroll', (event) => {
@@ -17,13 +29,12 @@ const setMenuSticky = function(menuIdentifier) {
 		}
 	})
 }
-setMenuSticky(menu)
 
 
 
-// TODO Refactorisar
+// // TODO Refactorisar
 
-const eventClickForSmoothScrolling = function(menuIdentifier) {
+export const eventClickForSmoothScrolling = function(menuIdentifier) {
 	menuIdentifier.addEventListener('click', (e) => {
 		if (e.target.hash && document.title == 'Gregorlopezdev') {
 			e.preventDefault()
@@ -59,7 +70,7 @@ const initScroll = function(hash, menuIdentifier) {
 		}
 	},10)
 }
-eventClickForSmoothScrolling(menu)
+
 
 const scrollup = function (button) {
 	let hash = button.parentNode.id
@@ -67,7 +78,7 @@ const scrollup = function (button) {
 		initScroll(hash)
 	})
 }
-const scrollupEvent = function (limit,button) {
+export const scrollupEvent = function (limit,button) {
 	let heightLimit = limit.clientHeight,
 		heightScroll
 	const scrollerDown = setInterval(() => {
@@ -87,6 +98,4 @@ const scrollupEvent = function (limit,button) {
 		}
 	},500)
 }
-// Primer parametro elemento el cual sera el limite para que aparesca el button
-// Segundo parametro elemento donde esta el buttom
-scrollupEvent(bannerHeader,scrollupButton)
+

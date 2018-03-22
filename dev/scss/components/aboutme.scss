@@ -2,7 +2,7 @@
 .aboutme {
 	@include edContainer();
 	padding: 0 $gutter;
-	margir-bottom: $gutter * 3;
+	margin-bottom: ($gutter * 3);
 
 	@include from(m) {
 		padding: 0 ($gutter * 5);
@@ -29,17 +29,25 @@
 		}
 
 		&:last-of-type {
-			display: none;
+			// display: none;
+			// width: 100%;
 			color: color(textColor);
-			background-color: color(borderColor);
-			border-right: 2px solid color(firstColor);
-			border-left: 2px solid color(firstColor);
+			transform: scale(1,0);
+			transform-origin: top center;
+			transition: transform .5s;
 
 			&.active {
-				display: block;
-				width: 100%;
-				padding: ($gutter / 2);
-				margin: $gutter $gutter 0;
+				transform: scale(1,1);
+				// padding: ($gutter / 2);
+				// margin: $gutter $gutter 0;
+				// border-right: 2px solid color(firstColor);
+				// border-left: 2px solid color(firstColor);
+				// background-color: color(borderColor);
+
+				// display: block;
+				// width: 100%;
+				// padding: ($gutter / 2);
+				// margin: $gutter $gutter 0;
 			}
 
 			@include from(l) {
@@ -57,6 +65,6 @@
 		font-size: text(t3);
 		cursor: pointer;
 		position: relative;
-		animation: $animationTopDown;
+		// animation: $animationTopDown;
 	}
 }
