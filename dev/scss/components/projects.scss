@@ -19,10 +19,12 @@
 		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
 		@extend %textSection;
 		@extend %viewLarge;
+		margin-bottom: ($gutter * 2);		
 	}
 
 	// CONTENEDOR DE LAS BOXES
 	&-content {
+		width: 100%;
 		font-family: $lato;
 		display: grid;
 		grid-template-columns: repeat(12,1fr);
@@ -33,10 +35,15 @@
 			border-radius: $radius;
 			border: 1px solid color(borderColor);
 			box-shadow: $shadow;
-			overflow: hidden;
 			margin: 0;
-			grid-column: 2 / span 10;
+			grid-column: 1 / span 12;
 
+			@include from(400px) {
+				grid-column: 2 / span 10;
+			}
+			@include from(550px) {
+				grid-column: 3 / span 8;
+			}
 			@include from(m) {
 				grid-column: span 6;
 			}
@@ -46,22 +53,50 @@
 			}
 		}
 
+		&_copy {
+			position: relative;
+			display: flex;
+			min-height: em(200px);
+			overflow: hidden;		
+
+			&:hover > img {
+				transform: translate3d(0,-90%,0);	
+			}
+		}
+
+		&_text {
+			color: color(textColor);
+			font-size: text(normal);
+			margin: auto;
+			text-align: center;
+			padding: 10%;			
+		}
+
 		&_img {
-			display: block;
+			// display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transform: translate3d(0,0,0);
+			transition: transform 1s;				
 		}
 
 		&_figcaption {
 			text-align: center;
-			padding: $gutter;
+			border-top: 1px solid color(borderColor);
+			// padding: $gutter;
 		}
 
 		&_link {
+			display: block;
 			color: color(textColor);
 			font-size: text(normal);
+			padding: $gutter 0;
+			transition: background-color .5s;
 
 			&:hover {
 				text-decoration: none;
-				color: color(alertColor);
+				background-color: color(borderColor);
 				cursor: pointer;
 			}
 		}

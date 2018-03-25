@@ -29,25 +29,15 @@
 		}
 
 		&:last-of-type {
-			// display: none;
-			// width: 100%;
 			color: color(textColor);
-			transform: scale(1,0);
-			transform-origin: top center;
-			transition: transform .5s;
+			max-height: 0;
+			overflow: hidden;
 
-			&.active {
-				transform: scale(1,1);
-				// padding: ($gutter / 2);
-				// margin: $gutter $gutter 0;
-				// border-right: 2px solid color(firstColor);
-				// border-left: 2px solid color(firstColor);
-				// background-color: color(borderColor);
-
-				// display: block;
-				// width: 100%;
-				// padding: ($gutter / 2);
-				// margin: $gutter $gutter 0;
+			&.enable {
+				@include slideDown(1.5s, 200px);
+			}
+			&.disable {
+				@include slideUp(.5s, 200px);
 			}
 
 			@include from(l) {
@@ -64,7 +54,6 @@
 		color: color(firstColor);
 		font-size: text(t3);
 		cursor: pointer;
-		position: relative;
-		// animation: $animationTopDown;
+		@include arrowUpDown(.5s,ease-out);
 	}
 }

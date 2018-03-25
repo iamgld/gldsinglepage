@@ -43,7 +43,6 @@ a:hover{
   padding-left:0;
   padding-right:0;
 }
-
 .menu{
   position:absolute;
   left:0;
@@ -149,7 +148,15 @@ a:hover{
 }
 
 .menu-scrollup>span{
-  position:relative;
+  display:inline-block;
+  transform:translateZ(0);
+  animation:a .5s infinite alternate ease-in;
+}
+
+@keyframes a{
+  to{
+    transform:translate3d(0,-2px,0);
+  }
 }
 
 .menuSticky{
@@ -194,6 +201,12 @@ a:hover{
   -ms-flex-pack:center;
       justify-content:center;
   min-height:600px;
+}
+
+@media screen and (min-width:640px){
+  .bannerHeader{
+    padding:0 80px;
+  }
 }
 
 .bannerHeader-title{
@@ -257,6 +270,7 @@ a:hover{
 
 @media screen and (min-width:640px){
   .bannerFooter{
+    padding:0 80px;
     margin-bottom:32px;
   }
 }
@@ -324,7 +338,7 @@ a:hover{
 .bannerFooter-copyright{
   -ms-grid-column:span 2;
       grid-column:span 2;
-  margin:16px 8px;
+  margin:24px;
   text-align:center;
   font-size:14px;
 }

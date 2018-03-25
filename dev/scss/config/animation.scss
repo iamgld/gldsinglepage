@@ -1,31 +1,82 @@
-// ANIMACIONES DE FECHAS
-/* $animationTopDown: animationTopDown 500ms linear infinite;
-@keyframes animationTopDown {
-    0% { top: 0px}
-    25% { top: 2px}
-    75% { top: -2px}
-    100% { top: 0px}
+// Todas las animaciones hechas con mixin
+
+//----------------------------------------------
+@mixin slideDown($time: 1s, $height: 100px)
+{
+	// FIXME: Requiere hacer toggle de will-change para mayor optimizacion
+    max-height: 0;
+    overflow: hidden;
+    animation: slideDown $time forwards;
+    @keyframes slideDown {
+        to {
+            max-height: $height;
+        }
+    }
 }
 
-$animationRightLeft: animationRightLeft 500ms linear infinite;
-@keyframes animationRightLeft {
-    0% { left: 0px}
-    25% { left: 2px}
-    75% { left: -2px}
-    100% { left: 0px}
-} */
-
-// ANIMACION DE LAS BARS
-$animationBarsOne: animationBarsOne 3s infinite;
-@keyframes animationBarsOne {
-    form {background-position: 0 0;}
-    to {background-position: 60px 0;}
+@mixin slideUp($time: 1s, $height: 100px)
+{
+	// FIXME: Requiere hacer toggle de will-change para mayor optimizacion
+    max-height: $height;
+    overflow: hidden;
+    animation: slideUp $time forwards;
+    @keyframes slideUp {
+        to {
+            max-height: 0;
+        }
+    }
 }
-
-// ANIMACION DE FONDO EN LAS BARS
-$animationBackBars: animationBackBars 1s infinite;
-@keyframes animationBackBars {
-    from {opacity: 0;width: 0}
-    40% {opacity: .3}
-    to {opacity: 0;width:100%;}
+//----------------------------------------------
+@mixin arrowUpDown($time : .5s, $cubicBezier: ease)
+{
+	transform: translate3d(0,0,0);
+	animation: arrowUpDown $time infinite alternate $cubicBezier;;
+	@keyframes arrowUpDown {
+		to {
+			transform: translate3d(0,-2px,0);			
+		}
+	}
 }
+@mixin arrowLeftRight($time : .5s, $cubicBezier: ease)
+{
+	transform: translate3d(0,0,0);
+	animation: arrowLeftRight $time infinite alternate $cubicBezier;
+	@keyframes arrowLeftRight {
+		to {
+			transform: translate3d(-2px,0,0);			
+		}
+	}
+}
+//----------------------------------------------
+@mixin twinkle($time : .5s, $cubicBezier: ease)
+{
+	opacity: 1;
+	animation: twinkle $time infinite alternate $cubicBezier;
+	@keyframes twinkle {
+		to {
+			opacity: 0;			
+		}
+	}
+}
+//----------------------------------------------
+
+
+
+
+
+
+// TODO Refactorisar
+// // Animacion de las bars
+// $animationBarsOne: animationBarsOne 3s infinite;
+// @keyframes animationBarsOne {
+//     from {background-position: 0 0;}
+//     to {background-position: 60px 0;}
+// }
+
+// // Animacion de fondo de las bars
+// $animationBackBars: animationBackBars 1s infinite;
+// @keyframes animationBackBars {
+//     from {opacity: 0;width: 0}
+//     40% {opacity: .3}
+//     to {opacity: 0;width:100%;}
+// }

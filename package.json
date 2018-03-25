@@ -1,29 +1,30 @@
 {
-  "name": "ed-boilerplate",
+  "name": "gregorlopezdev",
   "version": "1.0.0",
-  "description": "Simple scafolding for statics web projects",
+  "description": "Este es mi espacio en web By: Gregor",
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Alvaro Felipe",
+  "repository": "git@github.com:gregorlopezdev/gregorlopezdev.git",
+  "author": "Gregor Lopez <gregorlopez.dev@gmail.com>",
   "license": "GPL-2.0",
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.18.13",
-    "browserify": "^14.4.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^16.1.1",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.4.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-pug": "^3.3.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-watch": "^4.3.11",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-watch": "^5.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

@@ -5,9 +5,11 @@ article#projects.projects
 	section.projects-content
 		each val in [1,2,3,4,5,6]
 			figure.projects-content_figure
-				if val !== 2
-					img(src="/images/projects-" + val + ".jpg", alt="").projects-content_img
-				else
-					img(src="/images/projects-" + val + ".jpeg", alt="").projects-content_img
+				.projects-content_copy
+					p.projects-content_text Texto informativo de cada pagina
+					if val !== 2
+						img(src="/images/projects-" + val + ".jpg", alt="").projects-content_img
+					else
+						img(src="/images/projects-" + val + ".jpeg", alt="").projects-content_img
 				figcaption.projects-content_figcaption
 					a().projects-content_link Visitar Pagina

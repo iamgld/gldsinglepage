@@ -1,4 +1,5 @@
 // CONTENERDOR EXPERIENCE
+// TODO: Animacion de carga de experience
 
 // VARIABLES LOCALES
 $treeLimit: 400px;
@@ -65,6 +66,7 @@ $alignment : -9px;
 				&:nth-child(even) {
 					right: 2px;
 					border-left: 3px solid color(borderColor);
+					
 
 					&::before {
 						left: $alignment;
@@ -74,6 +76,7 @@ $alignment : -9px;
 				&:nth-child(odd) {
 					left: 1px;
 					border-right: 3px solid color(borderColor);
+
 				}
 
 				// POSICION DE CADA BOX EN LA GRID
@@ -122,21 +125,18 @@ $alignment : -9px;
 			height: $gutter;
 			background-color: color(shadow);
 			border-radius: $radius;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: ($gutter / 3);
-			margin-bottom: ($gutter / 3);
-			position: relative;
-			overflow: hidden;
+			margin: ($gutter / 2) auto;
+			// position: relative;
+			// overflow: hidden;
 
-			&::after {
-				content: "";
-				height: $gutter;
-				position: absolute;
-				background-color: color(bodyBg);
-				// ANIMACION DE FONDO EN LAS BARRAS
-				animation: $animationBackBars;
-			}
+			// &::after {
+			// 	content: "";
+			// 	height: $gutter;
+			// 	position: absolute;
+			// 	background-color: color(bodyBg);
+			// 	// ANIMACION DE FONDO EN LAS BARRAS
+			// 	// animation: $animationBackBars;
+			// }
 		}
 
 		&_title {

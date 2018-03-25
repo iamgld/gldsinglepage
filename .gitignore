@@ -1,2 +1,4 @@
 node_modules/
 .idea/
+.prepros-6.config
+.vscode/

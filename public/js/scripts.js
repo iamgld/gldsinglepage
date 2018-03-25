@@ -110,38 +110,127 @@ var scrollupEvent = exports.scrollupEvent = function scrollupEvent(limit, button
 
 var _menu = require('./modules/menu');
 
-(0, _menu.setMenuSticky)(document.getElementById('menu')); // Funcion que hace sticky al menu
-
-
+// --------------------------------------------------------------------------------
+// Funcion que hace sticky al menu
+(0, _menu.setMenuSticky)(document.getElementById('menu'));
+// --------------------------------------------------------------------------------
+// Funcion que toda al menu de un efeco smooth
+// Importacion de modulos
 (0, _menu.eventClickForSmoothScrolling)(document.getElementById('menu'));
+// --------------------------------------------------------------------------------
+// Funcion que hace aparece el button de ir arriba
 // Primer parametro elemento el cual sera el limite para que aparesca el button
 // Segundo parametro elemento donde esta el buttom
 (0, _menu.scrollupEvent)(document.getElementById('bannerHeader'), document.getElementById('scrollupButton'));
-
-// FUNCION DE LOS CONTENIDOS TOGGLEABLES EN LA SECCION ABOUTME
+// --------------------------------------------------------------------------------
+// Funcion de los contenidos toggleables en la seccion aboutme
 var changeDirectionAboutmeButton = function changeDirectionAboutmeButton(element) {
-	var button = element.querySelector('.aboutme-button');
-	button.addEventListener('click', function (e) {
-		// console.dir(button);
-		button.classList.toggle('icon-arrow-down');
-		button.classList.toggle('icon-arrow-up');
-		button.nextElementSibling.classList.toggle('active');
-	});
+	if (element) {
+		var button = element.querySelector('.aboutme-button');
+		var status = false;
+		if (button) {
+			button.addEventListener('click', function (e) {
+
+				// Cambio del icono de flecha y animationTimingFunction
+				button.classList.toggle('icon-arrow-down');
+				button.classList.toggle('icon-arrow-up');
+				button.classList.contains('icon-arrow-up') ? button.style.animationTimingFunction = "ease-in" : button.style.animationTimingFunction = "";
+
+				// Añadimos will-change a los elementos que van a ser animados
+				button.nextElementSibling.style.willChange = "max-height";
+
+				// Animacion de entrada del contenido oculto
+				button.nextElementSibling.classList.toggle('enable');
+
+				// El if es para agregar enable en el primer click y luego en los posteriores ir haciendo toggle entre enable y disable
+				if (status) {
+					// Animacion de salida del contenido oculto					
+					button.nextElementSibling.classList.toggle('disable');
+				} else {
+					status = true;
+				}
+
+				// Removemos el will-change cuando las animaciones terminen
+				button.nextElementSibling.addEventListener('animationend', function (e) {
+					// console.log(e);
+					e.target.style.willChange = "auto";
+				});
+			});
+		} else {
+			console.error('No se encontro "aboutme-button"');
+		}
+	} else {
+		console.error('No se le paso un "element"');
+	}
 };
 changeDirectionAboutmeButton(document.getElementById('aboutme'));
-
-// FUNCION DE LOS CONTENIDOS TOGGLEABLES EN LA SECCION STUDIES
+// --------------------------------------------------------------------------------
+// Funcion de los contenidos toggleables de la seccion studies
 var changeDirectionStudiesArrowIndicator = function changeDirectionStudiesArrowIndicator(element) {
-	element.addEventListener('click', function (e) {
-		var target = e.target;
-		if (target.classList.contains('studies-details_title')) {
-			// console.dir(target)
-			target.previousElementSibling.classList.toggle('icon-arrow-right');
-			target.previousElementSibling.classList.toggle('icon-arrow-down');
-			target.nextElementSibling.classList.toggle('active');
-		}
-	});
+	if (element) {
+		element.addEventListener('click', function (e) {
+
+			var target = e.target;
+			var targetPreviousElement = target.previousElementSibling;
+			var targetNextElement = target.nextElementSibling;
+
+			if (targetPreviousElement.classList.contains('icon-arrow-right')) {
+				// si contiene la clase icon-arrow-right se le agrega enable
+
+				if (target.classList.contains('studies-details_title')) {
+					// Añadimos will-change a los elementos que van a ser animados
+					targetNextElement.style.willChange = "max-height";
+					// console.log('mostrar')
+
+					// Cambio del icono de flecha				
+					targetPreviousElement.classList.toggle('icon-arrow-right');
+					targetPreviousElement.classList.toggle('icon-arrow-down');
+
+					// Nos aseguramos que no tenga la animacion de salida
+					targetNextElement.classList.remove('disable');
+					// Agregamos la animacion de entrada
+					targetNextElement.classList.add('enable');
+
+					// Removemos el will-change cuando las animacion termine
+					targetNextElement.addEventListener('animationend', function (e) {
+						targetNextElement.style.willChange = "auto";
+					});
+				} else {
+					console.error('No se encontro el activador de la animacion');
+				}
+			} else if (targetPreviousElement.classList.contains('icon-arrow-down')) {
+				// si no lo contiene se el agrega disable
+
+				if (target.classList.contains('studies-details_title')) {
+					// Añadimos will-change a los elementos que van a ser animados
+					targetNextElement.style.willChange = "max-height";
+					// console.log('ocultar')
+
+					// Cambio del icono de flecha				
+					targetPreviousElement.classList.toggle('icon-arrow-right');
+					targetPreviousElement.classList.toggle('icon-arrow-down');
+
+					// Nos aseguramos que no tenga la animacion de entrada
+					targetNextElement.classList.remove('enable');
+					// Agregamos la animacion de salida
+					targetNextElement.classList.add('disable');
+
+					// Removemos el will-change cuando las animacion termine
+					targetNextElement.addEventListener('animationend', function (e) {
+						targetNextElement.style.willChange = "auto";
+					});
+				} else {
+					console.error('No se encontro el activador de la animacion');
+				}
+			} else {
+				console.error('No se encontro ningun icon-arrow');
+			}
+		});
+	} else {
+		console.error('No se le paso un "element"');
+	}
 };
 changeDirectionStudiesArrowIndicator(document.getElementById('studies'));
+// --------------------------------------------------------------------------------
 
 },{"./modules/menu":1}]},{},[2]);

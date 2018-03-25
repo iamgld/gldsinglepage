@@ -28,6 +28,10 @@
 	flex-direction: column;
 	justify-content: center;
 	min-height: $heightBH;
+	
+	@include from(m) {
+		padding: 0 $gutter*5;
+	}
 
 	// SECCION DEL TITULO DEL HEADER
 	&-title {

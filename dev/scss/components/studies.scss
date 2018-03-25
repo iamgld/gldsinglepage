@@ -46,22 +46,39 @@
 		}
 
 		&_title {
-			display: inline;
+			display: inline-block;
 			color: color(firstColor);
 			font-size: text(normal);
+			margin: ($gutter / 2) 0;
 
 			&:hover {
 				cursor: pointer;
 			}
 		}
+		& > .icon-arrow-right, & > .icon-arrow-down {
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		& > .icon-arrow-right {
+			@include arrowLeftRight(.5s,ease-out);
+		}
+
+		& > .icon-arrow-down {
+			@include arrowUpDown(.5s,ease-out);
+		}
 
 		&_content {
-			display: none;
+			display: flex;
 			flex-direction: column;
-
-			&.active {
-				display: flex;
-				margin-top: $gutter;
+			max-height: 0;
+			overflow: hidden;
+			
+			&.enable {
+				@include slideDown(1.5s, 300px);
+			}
+			&.disable {
+				@include slideUp(.5s, 300px);
 			}
 		}
 		&_link {
@@ -73,20 +90,6 @@
 				text-decoration: none;
 				color: color(alertColor);
 			}
-		}
-
-		& > .icon-arrow-right, & > .icon-arrow-down {
-			position: relative;
-			cursor: pointer;
-			top: 2px;
-		}
-
-		& > .icon-arrow-right {
-			// animation: $animationRightLeft;
-		}
-
-		& > .icon-arrow-down {
-			// animation: $animationTopDown;
 		}
 	}
 	// BOXES DE LAS TECNOLOGIAS
@@ -117,22 +120,23 @@
 				content: "";
 				height: rem(40px);
 				position: absolute;
-				font: text(normal) $lato;
-				text-transform: uppercase;
+				font: text(normal) $megrim;
+				// text-transform: uppercase;
 				color: color(textColor);
 				text-align: center;
-				// font-weight: 100;
+				font-weight: 600;
 				line-height: rem(40px);
-				// DISEÑO DEL FONDO DE LAS BARS
-				background-size: 30px 30px;
-				background-image: linear-gradient(135deg,
-									rgba(255, 255, 255, .15) 25%,
-									transparent 25%, transparent 50%,
-									rgba(255, 255, 255, .15) 50%,
-									rgba(255, 255, 255, .15) 75%,
-									transparent 75%, transparent);
+				// Diseño de fondo d elas bars
+				// background-size: 30px 30px;
+				// TODO: Animacion pendiente pro hacer
+				// background-image: linear-gradient(135deg,
+									// rgba(255, 255, 255, .15) 25%,
+									// transparent 25%, transparent 50%,
+									// rgba(255, 255, 255, .15) 50%,
+									// rgba(255, 255, 255, .15) 75%,
+									// transparent 75%, transparent);
 				// ANIMACION DEL FONDO DE LAS BARS
-				animation: $animationBarsOne;
+				// animation: $animationBarsOne;
 			}
 
 			// BOX AFTER ANIMADA DE CADA BARS
@@ -157,38 +161,38 @@
 			// NOMBRE QUE MUESTRA CADA BARS
 			&:nth-child(1):before {
 				content: "html";
-				font-style: oblique;
+				// font-style: oblique;
 				width: $widthHtml;
 				background-color: color(html);
 			}
 			&:nth-child(2):before {
 				content: "css";
-				font-style: oblique;
+				// font-style: oblique;
 				width: $widthCss;
 				background-color: color(css);
 			}
 			&:nth-child(3):before {
 				content: "js";
 				width: $widthJs;
-				font-style: oblique;
+				// font-style: oblique;
 				background-color: color(js);
 			}
 			&:nth-child(4):before {
 				content: "pug";
 				width: $widthPug;
-				font-style: oblique;
+				// font-style: oblique;
 				background-color: color(pug);
 			}
 			&:nth-child(5):before {
 				content: "sass";
 				width: $widthSass;
-				font-style: oblique;
+				// font-style: oblique;
 				background-color: color(sass);
 			}
 			&:nth-child(6):before {
 				content: "git";
 				width: $widthGit;
-				font-style: oblique;
+				// font-style: oblique;
 				background-color: color(git);
 			}
 		}

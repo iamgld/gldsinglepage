@@ -33,7 +33,7 @@
 				margin-bottom: ($gutter / 2);
 
 				& > .logo {
-					font: text(t2) $fontLogo;
+					font: text(t2) $megrim;
 					padding: 0;
 				}
 
@@ -108,7 +108,9 @@
 		}
 
 		& > span {
-			position: relative;
+			display: inline-block;
+			@include arrowUpDown(.5s,ease-in);
+			// position: relative;
 			// animation: $animationTopDown;
 		}
 	}
