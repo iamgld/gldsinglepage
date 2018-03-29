@@ -4,14 +4,14 @@
 // export const saludo = () => {
 // 	console.log('Hola mundo')
 //   };
-  
+
 //   export const despedida = () => {
 // 	console.log('Adiós mundo')
 //   };
-  
+
 
 // FUNCION QUE HACE AL MENU STICKY
-export const setMenuSticky = function(menuIdentifier) {
+const setMenuSticky = function(menuIdentifier) {
 	let menuOffsetTop = menuIdentifier.offsetTop,
 		links = [...menuIdentifier.querySelectorAll('a')]
 	window.addEventListener('scroll', (event) => {
@@ -34,7 +34,7 @@ export const setMenuSticky = function(menuIdentifier) {
 
 // // TODO Refactorisar
 
-export const eventClickForSmoothScrolling = function(menuIdentifier) {
+const eventClickForSmoothScrolling = function(menuIdentifier) {
 	menuIdentifier.addEventListener('click', (e) => {
 		if (e.target.hash && document.title == 'Gregorlopezdev') {
 			e.preventDefault()
@@ -78,7 +78,8 @@ const scrollup = function (button) {
 		initScroll(hash)
 	})
 }
-export const scrollupEvent = function (limit,button) {
+
+const scrollupEvent = function (limit,button) {
 	let heightLimit = limit.clientHeight,
 		heightScroll
 	const scrollerDown = setInterval(() => {
@@ -99,3 +100,8 @@ export const scrollupEvent = function (limit,button) {
 	},500)
 }
 
+export {
+  setMenuSticky,
+  eventClickForSmoothScrolling,
+  scrollupEvent,
+}

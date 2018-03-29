@@ -12,11 +12,12 @@ $devMode    : false;
 // );
 @import "ed-grid/ed-grid";
 
-// TYPOGRAFIAS
+// typografias
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700|Megrim');
 
-// CODIGO REUTILIZABLE
+// Codigo reutilizable
 @import "function";
 @import "animation";
 @import "variables";
 @import "placeholder";
+@import "mixin";

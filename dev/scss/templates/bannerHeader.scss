@@ -10,7 +10,7 @@
 	clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 	min-height: $heightBH;
 	position: relative;
-	margin-bottom: $gutter*3;
+	margin-bottom: ($gutter * 3);
 	&::before {
 		content: "";
 		width: 100%;
@@ -23,14 +23,16 @@
 // ESTILOS PARA EL CONTENIDO DENTRO DE BANNERHEADER
 .bannerHeader {
 	@include edContainer();
-	padding: $gutter*3 $gutter $gutter*5;
+	padding: ($gutter * 3) $gutter ($gutter * 5);
 	position: relative;
 	flex-direction: column;
 	justify-content: center;
 	min-height: $heightBH;
-	
+	color: color(cream);
+
+
 	@include from(m) {
-		padding: 0 $gutter*5;
+		padding: 0 ($gutter * 5);
 	}
 
 	// SECCION DEL TITULO DEL HEADER
@@ -39,7 +41,7 @@
 		font: text(t1) $openSans;
 		&_one {
 			margin: 0 0 ($gutter / 2);
-			color: color(bodyBg);
+			// color: color(cream);
 		}
 	}
 
@@ -50,7 +52,7 @@
 
 		&_one, &_two {
 			margin: 0;
-			color: color(bodyBg);
+			// color: color(cream);
 		}
 	}
 }

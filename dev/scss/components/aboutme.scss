@@ -3,6 +3,8 @@
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
+	color: color(grayTwo);
+	font: text(normal) $lato;
 
 	@include from(m) {
 		padding: 0 ($gutter * 5);
@@ -18,18 +20,12 @@
 	&-text {
 		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
 		@extend %textSection;
-		@extend %viewLarge;
 
 		& > span {
 			font-style: italic;
 		}
 
-		& > strong {
-			color: rgba(color(firstColor), .8);
-		}
-
 		&:last-of-type {
-			color: color(textColor);
 			max-height: 0;
 			overflow: hidden;
 
@@ -47,11 +43,12 @@
 	}
 	// ARROW BUTTON
 	&-button {
+		width: 100%;
 		text-align: center;
 		margin-top: $gutter;
 		margin-left: auto;
 		margin-right: auto;
-		color: color(firstColor);
+		color: color(one);
 		font-size: text(t3);
 		cursor: pointer;
 		@include arrowUpDown(.5s,ease-out);

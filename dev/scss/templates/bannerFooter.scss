@@ -31,7 +31,7 @@
 	display: grid;
 	margin-bottom: $gutter;
 	grid-template-columns: repeat(2, 1fr);
-	color: color(bodyBg);
+	color: color(cream);
 	font: text(normal) $lato;
 
 	@include from(m) {
@@ -52,7 +52,7 @@
 		}
 
 		&_text {
-			margin: ($gutter/3) 0;
+			margin: ($gutter / 3) 0;
 		}
 	}
 
@@ -68,17 +68,17 @@
 		}
 
 		&_link {
-			margin: ($gutter/3) 0;
+			margin: ($gutter / 3) 0;
 			line-height: .1;
-			font-size: (text(t1)*1.5);
-			color: color(bodyBg);
+			font-size: (text(t1) * 1.5);
+			color: color(cream);
 
 			&:hover {
 				text-decoration: none;
-				color: color(alertColor);
+				color: color(alert);
 			}
 			@include from(m) {
-				font-size: (text(t1)*2);
+				font-size: (text(t1) * 2);
 			}
 		}
 	}

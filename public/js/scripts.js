@@ -20,7 +20,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 // FUNCION QUE HACE AL MENU STICKY
-var setMenuSticky = exports.setMenuSticky = function setMenuSticky(menuIdentifier) {
+var setMenuSticky = function setMenuSticky(menuIdentifier) {
 	var menuOffsetTop = menuIdentifier.offsetTop,
 	    links = [].concat(_toConsumableArray(menuIdentifier.querySelectorAll('a')));
 	window.addEventListener('scroll', function (event) {
@@ -41,7 +41,7 @@ var setMenuSticky = exports.setMenuSticky = function setMenuSticky(menuIdentifie
 
 // // TODO Refactorisar
 
-var eventClickForSmoothScrolling = exports.eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIdentifier) {
+var eventClickForSmoothScrolling = function eventClickForSmoothScrolling(menuIdentifier) {
 	menuIdentifier.addEventListener('click', function (e) {
 		if (e.target.hash && document.title == 'Gregorlopezdev') {
 			e.preventDefault();
@@ -84,7 +84,8 @@ var scrollup = function scrollup(button) {
 		initScroll(hash);
 	});
 };
-var scrollupEvent = exports.scrollupEvent = function scrollupEvent(limit, button) {
+
+var scrollupEvent = function scrollupEvent(limit, button) {
 	var heightLimit = limit.clientHeight,
 	    heightScroll = void 0;
 	var scrollerDown = setInterval(function () {
@@ -104,6 +105,10 @@ var scrollupEvent = exports.scrollupEvent = function scrollupEvent(limit, button
 		}
 	}, 500);
 };
+
+exports.setMenuSticky = setMenuSticky;
+exports.eventClickForSmoothScrolling = eventClickForSmoothScrolling;
+exports.scrollupEvent = scrollupEvent;
 
 },{}],2:[function(require,module,exports){
 'use strict';
@@ -144,7 +149,7 @@ var changeDirectionAboutmeButton = function changeDirectionAboutmeButton(element
 
 				// El if es para agregar enable en el primer click y luego en los posteriores ir haciendo toggle entre enable y disable
 				if (status) {
-					// Animacion de salida del contenido oculto					
+					// Animacion de salida del contenido oculto
 					button.nextElementSibling.classList.toggle('disable');
 				} else {
 					status = true;
@@ -182,7 +187,7 @@ var changeDirectionStudiesArrowIndicator = function changeDirectionStudiesArrowI
 					targetNextElement.style.willChange = "max-height";
 					// console.log('mostrar')
 
-					// Cambio del icono de flecha				
+					// Cambio del icono de flecha
 					targetPreviousElement.classList.toggle('icon-arrow-right');
 					targetPreviousElement.classList.toggle('icon-arrow-down');
 
@@ -206,7 +211,7 @@ var changeDirectionStudiesArrowIndicator = function changeDirectionStudiesArrowI
 					targetNextElement.style.willChange = "max-height";
 					// console.log('ocultar')
 
-					// Cambio del icono de flecha				
+					// Cambio del icono de flecha
 					targetPreviousElement.classList.toggle('icon-arrow-right');
 					targetPreviousElement.classList.toggle('icon-arrow-down');
 

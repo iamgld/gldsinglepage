@@ -3,9 +3,10 @@
 	@include edContainer();
 	padding: 0 $gutter;
 	margin-bottom: ($gutter * 3);
+	font: text(normal) $lato;
 
 	@include from(m) {
-		padding: 0 $gutter*5;
+		padding: 0 ($gutter * 5);
 	}
 
 	// TITULO DE LA SECCION
@@ -18,14 +19,12 @@
 	&-text {
 		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
 		@extend %textSection;
-		@extend %viewLarge;
-		margin-bottom: ($gutter * 2);		
 	}
 
 	// CONTENEDOR DE LAS BOXES
 	&-content {
 		width: 100%;
-		font-family: $lato;
+		// font-family: $lato;
 		display: grid;
 		grid-template-columns: repeat(12,1fr);
 		grid-gap: $gutter;
@@ -33,8 +32,8 @@
 		// CADA UNA DE LAS BOX
 		&_figure {
 			border-radius: $radius;
-			border: 1px solid color(borderColor);
-			box-shadow: $shadow;
+			border: 1px solid color(grayOne);
+			@include shadow(color(grayOne));
 			margin: 0;
 			grid-column: 1 / span 12;
 
@@ -57,19 +56,19 @@
 			position: relative;
 			display: flex;
 			min-height: em(200px);
-			overflow: hidden;		
+			overflow: hidden;
 
 			&:hover > img {
-				transform: translate3d(0,-90%,0);	
+				transform: translate3d(0,-90%,0);
 			}
 		}
 
 		&_text {
-			color: color(textColor);
-			font-size: text(normal);
+			color: color(grayTwo);
+			// font-size: text(normal);
 			margin: auto;
 			text-align: center;
-			padding: 10%;			
+			padding: 10%;
 		}
 
 		&_img {
@@ -78,25 +77,25 @@
 			width: 100%;
 			height: 100%;
 			transform: translate3d(0,0,0);
-			transition: transform 1s;				
+			transition: transform 1s;
 		}
 
 		&_figcaption {
 			text-align: center;
-			border-top: 1px solid color(borderColor);
+			border-top: 1px solid color(grayTwo);
 			// padding: $gutter;
 		}
 
 		&_link {
 			display: block;
-			color: color(textColor);
-			font-size: text(normal);
+			color: color(grayTwo);
+			// font-size: text(normal);
 			padding: $gutter 0;
 			transition: background-color .5s;
 
 			&:hover {
 				text-decoration: none;
-				background-color: color(borderColor);
+				background-color: color(grayTwo);
 				cursor: pointer;
 			}
 		}

@@ -38,7 +38,7 @@
 				}
 
 				@include from(l) {
-					padding-left: $gutter;
+					// padding-left: $gutter;
 					text-align: left;
 					margin-bottom: 0;
 					grid-column: span 8;
@@ -48,14 +48,14 @@
 
 		// ESTILOS PARA LOS ANCHOR DEL MENU
 		&_link {
-			color: color(bodyBg);
+			color: color(cream);
 			display: inline-block;
 			padding: ($gutter / 3);
 			font-size: text(small);
 			// position: relative;
 
 			&:hover {
-				color: color(alertColor);
+				color: color(alert);
 				text-decoration: none;
 			}
 
@@ -97,9 +97,9 @@
 		// ------------------
 		padding: ($gutter / 3);
 		padding-right: ($gutter * 2);
-		color: color(bodyBg);
+		color: color(cream);
 		font-size: text(normal);
-		background-color: color(alertColor);
+		background-color: color(alert);
 		border-radius: $radius;
 		cursor: pointer;
 
@@ -119,11 +119,7 @@
 // ESTILOS QUE HACEN QUE EL MENU SEA STICKY
 .menuSticky {
 	position: fixed;
-	background-color: color(bodyBg);
+	background-color: color(one);
 	width: 100%;
-	box-shadow: $shadow;
-
-	&-link {
-		color: color(textColor);
-	}
+	// @include shadow(color(grayOne));
 }

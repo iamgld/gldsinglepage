@@ -21,10 +21,10 @@ $alignment : -9px;
 	}
 
 	// SECIONES DE TEXTO
-	&-text {
+	// &-text {
 		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
-		@extend %textSection;
-	}
+		// @extend %textSection;
+	// }
 
 	// BOX CONTENEDORA DEL TREE DE EXPERIENCE
 	&-content {
@@ -53,20 +53,20 @@ $alignment : -9px;
 					width: 15px;
 					height: 15px;
 					border-radius: 50%;
-					background-color: color(borderColor);
+					background-color: color(one);
 					top: 40%;
 					right: $alignment;
 				}
 
 				&:hover::before {
-					background-color: color(alertColor);
+					background-color: color(success);
 				}
 
 				// ESTILOS PARA POSICIONAR CADA PUNTO DE LAS BOX EN SU LUGAR
 				&:nth-child(even) {
 					right: 2px;
-					border-left: 3px solid color(borderColor);
-					
+					border-left: 3px solid color(one);
+
 
 					&::before {
 						left: $alignment;
@@ -75,7 +75,7 @@ $alignment : -9px;
 
 				&:nth-child(odd) {
 					left: 1px;
-					border-right: 3px solid color(borderColor);
+					border-right: 3px solid color(one);
 
 				}
 
@@ -123,7 +123,7 @@ $alignment : -9px;
 		// ESTILOS COMPARTIDOS DE LOS ELEMENT QUE CONFORMAN CADA BOX
 		&_title, &_text, &_footer  {
 			height: $gutter;
-			background-color: color(shadow);
+			background-color: color(two);
 			border-radius: $radius;
 			margin: ($gutter / 2) auto;
 			// position: relative;

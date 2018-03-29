@@ -1,23 +1,22 @@
 @import "../config/config";
 
 body {
-	background-color: color(bodyBg);
+	background-color: color(cream);
 }
 
 // Variables of bannerHeader and bannerFooter
 // Config of bannerHeader
 $heightBH: 600px; // height min
 $bgImageOfBH: url(/images/banner1.jpeg); // Background image
-$bgColorOfBH: color(firstColor); // preview color of de background image
+$bgColorOfBH: color(one); // preview color of de background image
 $bgPositionImageBH: center bottom; // Position of the background image
-$layerColorBH: rgba(color(firstColor), .8); // Color layor of the background image
+$layerColorBH: rgba(color(one), .8); // Color layor of the background image
 // Config of bannerFooter
 $heightBF: 320px; // height min of bannerFooter
 $bgImageOfBF: url(/images/footer1.jpeg); // Background image
-$bgColorOfBF: color(firstColor); // preview color of de background image
+$bgColorOfBF: color(one); // preview color of de background image
 $bgPositionImageBF: center; // Position of the background image
-$layerColorBF: rgba(color(firstColor), .8); // Color layor of the background image
-
+$layerColorBF: rgba(color(one), .8); // Color layor of the background image
 
 @import "../components/menu";
 @import "../templates/bannerHeader";

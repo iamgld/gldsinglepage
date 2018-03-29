@@ -33,7 +33,7 @@
 	animation: arrowUpDown $time infinite alternate $cubicBezier;;
 	@keyframes arrowUpDown {
 		to {
-			transform: translate3d(0,-2px,0);			
+			transform: translate3d(0,-2px,0);
 		}
 	}
 }
@@ -43,7 +43,7 @@
 	animation: arrowLeftRight $time infinite alternate $cubicBezier;
 	@keyframes arrowLeftRight {
 		to {
-			transform: translate3d(-2px,0,0);			
+			transform: translate3d(-2px,0,0);
 		}
 	}
 }
@@ -54,7 +54,7 @@
 	animation: twinkle $time infinite alternate $cubicBezier;
 	@keyframes twinkle {
 		to {
-			opacity: 0;			
+			opacity: 0;
 		}
 	}
 }

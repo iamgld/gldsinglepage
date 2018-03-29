@@ -1,14 +1,13 @@
-// DIFERENTES COLORES UTILIZADOS EN EL PROYECTO
+// Diferentes colores utilizados en el proyecto
 $colors: (
-	firstColor: #371b1c,
-	secondColor: #a5402d,
-	darkColor: #282d31,
-	textColor: #53575a,
-	borderColor: #dfe0e0,
-	bodyBg: #fcfcfc,
-	alertColor: #ff3c32,
-	successColor: #13a059,
-	warningColor: #fba905,
+	one: #2f343f,
+	two: #b0b9c5,
+	grayOne: #393E46,
+	grayTwo: #5C636E,
+	cream: #F3F3F3,
+	alert: #FA4659,
+	success: #38C6BD,
+	warning: #FA9856,
 	html: #f56a3f,
 	css: #4ea4de,
 	js: #f1e03c,
@@ -18,12 +17,12 @@ $colors: (
 	shadow: rgba(0,0,0,.1)
 );
 
-// FUNCION PARA EXTRAER COLOR
+// Funcion para extraer color
 @function color($color) {
 	@return map-get($colors, $color)
 };
 
-// DIFERENTES TAMAÑOS DE FUENTES DEL PROYECTO
+// Diferentes tamaños de fuentes del proyecto
 $texts: (
 	t1: 36px,
 	t2: 30px,
@@ -33,12 +32,12 @@ $texts: (
 	smaller: 14px
 );
 
-// FUNCION PARA EXTRAER EL TAMAÑO DE LA FUENTE
+// Funcion para extraer el tamaño de la fuente
 @function text($text) {
 	@return map-get($texts, $text)
 };
 
-// LISTA DE Z-INDEX
+// Lista de z-index
 $zindexs: (
 	one: 100,
 	two: 200,
@@ -47,7 +46,7 @@ $zindexs: (
 	five: 500
 );
 
-// FUNCION PARA EXTRAER Z-INDEX
+// Funcion para extraer z-index
 @function zindex($zindex) {
 	@return map-get($zindexs, $zindex)
 };

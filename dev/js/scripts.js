@@ -1,5 +1,5 @@
 // Importacion de modulos
-import {setMenuSticky,eventClickForSmoothScrolling,scrollupEvent} from "./modules/menu"
+import { setMenuSticky, eventClickForSmoothScrolling, scrollupEvent } from "./modules/menu"
 // --------------------------------------------------------------------------------
 // Funcion que hace sticky al menu
 setMenuSticky(
@@ -26,14 +26,14 @@ const changeDirectionAboutmeButton = function (element) {
 		let status = false
 		if (button) {
 			button.addEventListener('click', (e) => {
-			
+
 				// Cambio del icono de flecha y animationTimingFunction
 				button.classList.toggle('icon-arrow-down')
 				button.classList.toggle('icon-arrow-up')
-				button.classList.contains('icon-arrow-up') ? 
+				button.classList.contains('icon-arrow-up') ?
 					button.style.animationTimingFunction = "ease-in" :
-					button.style.animationTimingFunction = "" 
-				
+					button.style.animationTimingFunction = ""
+
 				// Añadimos will-change a los elementos que van a ser animados
 				button.nextElementSibling.style.willChange = "max-height"
 
@@ -42,7 +42,7 @@ const changeDirectionAboutmeButton = function (element) {
 
 				// El if es para agregar enable en el primer click y luego en los posteriores ir haciendo toggle entre enable y disable
 				if (status) {
-					// Animacion de salida del contenido oculto					
+					// Animacion de salida del contenido oculto
 					button.nextElementSibling.classList.toggle('disable')
 				} else {
 					status = true
@@ -53,7 +53,7 @@ const changeDirectionAboutmeButton = function (element) {
 					// console.log(e);
 					e.target.style.willChange = "auto"
 				})
-				
+
 			})
 		} else {
 			console.error('No se encontro "aboutme-button"')
@@ -70,7 +70,7 @@ changeDirectionAboutmeButton(
 const changeDirectionStudiesArrowIndicator = function (element) {
 	if (element) {
 		element.addEventListener('click', (e) => {
-			
+
 			let target = e.target
 			let targetPreviousElement = target.previousElementSibling
 			let targetNextElement = target.nextElementSibling
@@ -83,7 +83,7 @@ const changeDirectionStudiesArrowIndicator = function (element) {
 					targetNextElement.style.willChange = "max-height"
 					// console.log('mostrar')
 
-					// Cambio del icono de flecha				
+					// Cambio del icono de flecha
 					targetPreviousElement.classList.toggle('icon-arrow-right')
 					targetPreviousElement.classList.toggle('icon-arrow-down')
 
@@ -99,15 +99,15 @@ const changeDirectionStudiesArrowIndicator = function (element) {
 				} else {
 					console.error('No se encontro el activador de la animacion')
 				}
-			} else if (targetPreviousElement.classList.contains('icon-arrow-down')) { 
+			} else if (targetPreviousElement.classList.contains('icon-arrow-down')) {
 				// si no lo contiene se el agrega disable
 
 				if(target.classList.contains('studies-details_title')) {
 					// Añadimos will-change a los elementos que van a ser animados
 					targetNextElement.style.willChange = "max-height"
 					// console.log('ocultar')
-					
-					// Cambio del icono de flecha				
+
+					// Cambio del icono de flecha
 					targetPreviousElement.classList.toggle('icon-arrow-right')
 					targetPreviousElement.classList.toggle('icon-arrow-down')
 
