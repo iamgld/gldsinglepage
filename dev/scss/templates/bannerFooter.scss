@@ -7,7 +7,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: $bgPositionImageBF;
-	clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+	clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
 	min-height: $heightBF;
 	position: relative;
 	display: flex;
@@ -20,7 +20,7 @@
 		min-height: $heightBF;
 		position: absolute;
 		background-color: $layerColorBF;
-		clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%);
+		clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
 	}
 }
 // ESTILOS PARA EL CONTENIDO DENTRO DE BANNERFOOTER

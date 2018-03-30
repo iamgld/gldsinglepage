@@ -1,26 +1,30 @@
 @import "../config/config";
 
+body {
+	background-color: color(cream);
+}
+
 // Variables of bannerHeader and bannerFooter
 
 // Config of bannerHeader
 $heightBH: 600px; // height min
-$bgImageOfBH: url(../images/banner2.jpeg); // Background image
+$bgImageOfBH: url(/images/banner2.jpeg); // Background image
 $bgColorOfBH: color(one); // preview color of de background image
 $bgPositionImageBH: center bottom; // Position of the background image
 $layerColorBH: rgba(color(one), .8); // Color layor of the background image
 // Config of bannerFooter
 $heightBF: 320px; // height min of bannerFooter
-$bgImageOfBF: url(../images/footer1.jpeg); // Background image
+$bgImageOfBF: url(/images/footer1.jpeg); // Background image
 $bgColorOfBF: color(one); // preview color of de background image
 $bgPositionImageBF: center; // Position of the background image
 $layerColorBF: rgba(color(one), .8); // Color layor of the background image
 
 
-// @import "../components/menu";
-// @import "../templates/bannerHeader";
-// @import "../templates/bannerFooter";
+@import "../components/menu";
+@import "../templates/bannerHeader";
+@import "../templates/bannerFooter";
 
-.content_title {
+.content-title {
     @include edContainer();
     color: color(grayOne);
     font: text(t3) $lato;

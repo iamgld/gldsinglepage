@@ -1,22 +1,13 @@
 // CONTENERDOR STUDIES
+.studiesContent {
+	@extend %contentClipPath;
+}
 .studies {
 	@include edContainer();
-	padding: $gutter ($gutter *2);
-	margin-bottom: ($gutter * 3);
 	color: color(grayTwo);
 	font: text(normal) $lato;
-	// TODO: buscar otra manera el que fondo ocupe el 100 del viewport
-	background-color: rgba(color(two), .5);
+	@extend %contentClipPathChild;
 
-	@include from(m) {
-		padding: $gutter ($gutter * 5);
-	}
-
-	// TODO: buscar otra manera el que fondo ocupe el 100 del viewport
-	@include from(l) {
-		box-shadow: 500px 0 0 rgba(color(two), .5),
-								-500px 0 0 rgba(color(two), .5);
-	}
 
 	// TITULO DE LA SECCION
 	&-title {
@@ -57,6 +48,7 @@
 			font-size: text(normal);
 			font-family: $openSans;
 			margin: ($gutter / 2) 0;
+			line-height: 1.5;
 
 			&:hover {
 				cursor: pointer;
@@ -92,6 +84,7 @@
 			margin: 0 auto;
 			font: text(normal) $lato;
 			color: color(grayTwo);
+			line-height: 1.5;
 
 			&:hover {
 				text-decoration: none;
@@ -99,109 +92,4 @@
 			}
 		}
 	}
-	// BOXES DE LAS TECNOLOGIAS
-	// &-box {
-	// 	width: 100%;
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// 	justify-content: center;
-	//
-	// 	@include from(l) {
-	// 		padding-right: ($gutter * 2);
-	// 		padding-left: ($gutter * 2);
-	// 	}
-	//
-	// 	// PROPIEDADES DE CADA BARS
-	// 	&_bar {
-	// 		@include edItem(80,40,30);
-	// 		padding: 0;
-	// 		height: rem(40px);
-	// 		margin: $gutter;
-	// 		border-radius: $radius;
-	// 		background-color: color(grayOne);
-	// 		position: relative;
-	// 		overflow: hidden;
-	//
-	// 		// BOX BEFORE ANIMADA DE CADA BARS
-	// 		&:before {
-	// 			content: "";
-	// 			height: rem(40px);
-	// 			position: absolute;
-	// 			font: text(normal) $megrim;
-	// 			// text-transform: uppercase;
-	// 			color: color(grayTwo);
-	// 			text-align: center;
-	// 			font-weight: 600;
-	// 			line-height: rem(40px);
-	// 			// Diseño de fondo d elas bars
-	// 			// background-size: 30px 30px;
-	// 			// TODO: Animacion pendiente pro hacer
-	// 			// background-image: linear-gradient(135deg,
-	// 								// rgba(255, 255, 255, .15) 25%,
-	// 								// transparent 25%, transparent 50%,
-	// 								// rgba(255, 255, 255, .15) 50%,
-	// 								// rgba(255, 255, 255, .15) 75%,
-	// 								// transparent 75%, transparent);
-	// 			// ANIMACION DEL FONDO DE LAS BARS
-	// 			// animation: $animationBarsOne;
-	// 		}
-	//
-	// 		// BOX AFTER ANIMADA DE CADA BARS
-	// 		// &:after {
-	// 			// content: "";
-	// 			// height: rem(40px);
-	// 			// background-color: color(bodyBg);
-	// 			// position: absolute;
-	// 			// // SEGUNDA ANIMACION EN LAS BARRAS
-	// 			// animation: $animationBackBars;
-	// 			// animation-duration: 2s;
-	// 		// }
-	//
-	// 		// VARIABLES QUE DEFINEN EL ANCHO INTERIOR DE CADA BARRA
-	// 		$widthHtml: 80%;
-	// 		$widthPug: 70%;
-	// 		$widthCss: 80%;
-	// 		$widthSass: 70%;
-	// 		$widthJs: 50%;
-	// 		$widthGit: 70%;
-	//
-	// 		// NOMBRE QUE MUESTRA CADA BARS
-	// 		&:nth-child(1):before {
-	// 			content: "html";
-	// 			// font-style: oblique;
-	// 			width: $widthHtml;
-	// 			background-color: color(html);
-	// 		}
-	// 		&:nth-child(2):before {
-	// 			content: "css";
-	// 			// font-style: oblique;
-	// 			width: $widthCss;
-	// 			background-color: color(css);
-	// 		}
-	// 		&:nth-child(3):before {
-	// 			content: "js";
-	// 			width: $widthJs;
-	// 			// font-style: oblique;
-	// 			background-color: color(js);
-	// 		}
-	// 		&:nth-child(4):before {
-	// 			content: "pug";
-	// 			width: $widthPug;
-	// 			// font-style: oblique;
-	// 			background-color: color(pug);
-	// 		}
-	// 		&:nth-child(5):before {
-	// 			content: "sass";
-	// 			width: $widthSass;
-	// 			// font-style: oblique;
-	// 			background-color: color(sass);
-	// 		}
-	// 		&:nth-child(6):before {
-	// 			content: "git";
-	// 			width: $widthGit;
-	// 			// font-style: oblique;
-	// 			background-color: color(git);
-	// 		}
-	// 	}
-	// }
 }

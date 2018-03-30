@@ -19,6 +19,22 @@
     text-align: center;
     line-height: 1.5;
 }
+// Estilos del clip-path para contenedores
+%contentClipPath {
+  clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+	background-color: rgba(color(two), .5);
+	padding-top: ($gutter * 3);
+	padding-bottom: ($gutter * 3);
+	margin-bottom: ($gutter * 3);
+}
+// estilos para los hijos de los contenedores con clip-path
+%contentClipPathChild {
+  padding: $gutter *2;
+
+  @include from(m) {
+    padding: ($gutter * 3) ($gutter * 5);
+  }
+}
 // -----------------END ESTILOS COMPARTIDOS ENTRE SECCIONES---------------------
 
 
