@@ -17,7 +17,8 @@ $alignment : -9px;
 	// TITULO DE LA SECCION
 	&-title {
 		// ESTILOS POR DEFECTO DE LOS TITULOS DE CADA SECCION
-		@extend %titleSection;
+    @extend %titleSection;
+    margin-bottom: ($gutter * 3);
 	}
 
 	// SECIONES DE TEXTO
@@ -122,13 +123,15 @@ $alignment : -9px;
 
 		// ESTILOS COMPARTIDOS DE LOS ELEMENT QUE CONFORMAN CADA BOX
 		&_title, &_text, &_footer  {
-			height: $gutter;
+			height: 10px;
 			background-color: color(two);
 			border-radius: $radius;
-			margin: ($gutter / 2) auto;
+      margin: ($gutter / 2) auto;
+      @include from(m) {
+			height: 12px;        
+      }
 			// position: relative;
 			// overflow: hidden;
-
 			// &::after {
 			// 	content: "";
 			// 	height: $gutter;
@@ -138,7 +141,6 @@ $alignment : -9px;
 			// 	// animation: $animationBackBars;
 			// }
 		}
-
 		&_title {
 			width: 80%;
 		}

@@ -172,6 +172,7 @@ body{
   background-color:#2f343f;
   background-image:url(/images/banner2.jpeg);
   background-repeat:no-repeat;
+  background-attachment:fixed;
   background-size:cover;
   background-position:bottom;
   position:relative;
@@ -230,6 +231,7 @@ body{
   background-color:#2f343f;
   background-image:url(/images/footer1.jpeg);
   background-repeat:no-repeat;
+  background-attachment:fixed;
   background-size:cover;
   background-position:50%;
   position:relative;
@@ -261,6 +263,7 @@ body{
   margin-bottom:16px;
   -ms-grid-columns:(1fr)[2];
       grid-template-columns:repeat(2,1fr);
+  grid-gap:16px;
   color:#f3f3f3;
   font:20px Lato,sans-serif;
 }
@@ -316,7 +319,7 @@ body{
 
 .bannerFooter-social_link{
   margin:5.33333px 0;
-  line-height:.1;
+  line-height:.8;
   font-size:54px;
   color:#f3f3f3;
 }
@@ -326,18 +329,16 @@ body{
   color:#fa4659;
 }
 
-@media screen and (min-width:640px){
-  .bannerFooter-social_link{
-    font-size:72px;
-  }
-}
-
 .bannerFooter-copyright{
   -ms-grid-column:span 2;
       grid-column:span 2;
   margin:24px;
   text-align:center;
   font-size:14px;
+}
+
+.bannerFooter-copyright_company{
+  color:#38c6bd;
 }
 
 .content-title{

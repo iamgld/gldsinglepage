@@ -1,0 +1,50 @@
+.modalStudies {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+	z-index: zindex(five);  
+  background-color: rgba(color(one), .8);
+  display: flex;
+
+  &-content {
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    background-color: color(cream);
+    border-radius: $radius;
+
+    &_item {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      font: text(normal) $lato;
+      color: color(grayTwo);
+      margin: ($gutter / 2) 0;
+    }
+    &_boxone {
+      grid-column: span 3;
+      display: flex;      
+      padding-left: ($gutter / 2); 
+      padding-right: ($gutter / 2); 
+    }
+    &_boxtwo {
+      grid-column: span 1;
+      display: flex;
+    }
+    &_paragraph {
+      text-align: center;
+      margin: auto;
+    }
+    &_link {
+      display: inline-block;
+      margin: auto;
+      // padding: 1em;
+      @include button(
+        color(two),
+        inherit,
+        color(alert),
+        color(cream)
+      );
+    }
+  }
+}

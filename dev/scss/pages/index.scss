@@ -1,7 +1,7 @@
 @import "../config/config";
 
 body {
-	background-color: color(cream);
+  background-color: color(cream);
 }
 
 // Variables of bannerHeader and bannerFooter
@@ -15,7 +15,7 @@ $layerColorBH: rgba(color(one), .8); // Color layor of the background image
 $heightBF: 320px; // height min of bannerFooter
 $bgImageOfBF: url(/images/footer1.jpeg); // Background image
 $bgColorOfBF: color(one); // preview color of de background image
-$bgPositionImageBF: center; // Position of the background image
+$bgPositionImageBF: center top; // Position of the background image
 $layerColorBF: rgba(color(one), .8); // Color layor of the background image
 
 @import "../components/menu";
@@ -25,3 +25,4 @@ $layerColorBF: rgba(color(one), .8); // Color layor of the background image
 @import "../components/experience";
 @import "../components/projects";
 @import "../templates/bannerFooter";
+@import "../templates/modal";

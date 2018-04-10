@@ -1,4 +1,4 @@
-extends ../templates/templateBase
+extends ../templates/template-base
 
 //- TITULO Y ENLACE A LA HOJA DE ESTILOS DE ESTE DOCUMENTO
 append config
@@ -8,12 +8,12 @@ append config
 append body
 	include ../components/menu
 	header.header
-		include ../components/bannerHeader-index
+		include ../components/banner-header_index
 	include ../components/aboutme
 	include ../components/studies
 	include ../components/experience
 	include ../components/projects
 	footer.footer
-		include ../templates/bannerFooter
+		include ../templates/banner-footer
 append script
 	script(src="js/scripts.js")

@@ -1,15 +1,17 @@
 article.projectsContent
-	section#projects.projects
-		h2.projects-title Proyectos Realizados
-		p.projects-text
-			|	Esto es una muestra de como van a estar organizados mis proyectos, solo espera y los reales estarán aquí mas rápido de lo que imaginas.
-	section.gallery
-		each val in [1,2,3,4,5,6]
-			figure.gallery-item
-				if val !== 2
-					img(src=`/images/projects-${val}.jpg`, alt="Imagenes de proyectos").gallery-item_image
-				else
-					img(src=`/images/projects-${val}.jpeg`, alt="Imagenes de proyectos").gallery-item_image
-				figcaption.gallery-item_caption
-					p.gallery-item_copy Texto informativo de cada pagina a mostrar en la galeria
-					a.gallery-item_link Visitar Pagina
+  section#projects.projects
+    h2.projects-title Proyectos Realizados
+    p.projects-text
+      |	Esto es una muestra de como van a estar organizados mis proyectos, solo espera y los reales estarán aquí mas rápido de lo que imaginas.
+  section.gallery
+    each val in [1,2,3,4,5,6]
+      figure.gallery-item
+        case val
+          when 5
+          when 6
+            img(src=`/images/projects${val}.jpg`, alt="Imagenes de proyectos").gallery-item_image
+          default
+            img(src=`/images/projects${val}.jpeg`, alt="Imagenes de proyectos").gallery-item_image
+        figcaption.gallery-item_caption
+          p.gallery-item_copy Texto informativo de cada pagina a mostrar en la galeria
+          a.gallery-item_link Visitar Pagina

@@ -1,20 +1,17 @@
 // Sencion Projects
 .projectsContent {
 	@extend %contentClipPath;
-	padding-bottom: 0;
 	font: text(normal) $lato;
 	color: color(grayTwo);
 }
 .projects {
 	@include edContainer();
 	@extend %contentClipPathChild;
-
 	// TITULO DE LA SECCION
 	&-title {
 		// ESTILOS POR DEFECTO DE LOS TITULOS DE CADA SECCION
 		@extend %titleSection;
 	}
-
 	// SECIONES DE TEXTO
 	&-text {
 		// ESTILOS POR DEFECTO DE LOS TEXTOS DE CADA SECCION
@@ -22,28 +19,25 @@
 	}
 }
 .gallery {
-	font: text(normal) $lato;
-	clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+  font: text(normal) $lato;
+  max-width: 2000px;
+  margin:0 auto ($gutter * 2);
+	// clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
 	// background-color: salmon;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-
-
 	&-item {
 		height: em(250px);
 		margin: 0;
 		grid-column: span 6;
 		position: relative;
 		overflow: hidden;
-
 		@include from(m) {
 			grid-column: span 3;
 		}
 		@include from(l) {
-			grid-column: span 1;
+			grid-column: span 2;
 		}
-
-
 		&_image {
 			display: block;
 			position: absolute;
@@ -52,25 +46,15 @@
 			transform: translate3d(0,0,0);
 			transition: transform 1s;
 		}
-
 		&:hover &_image {
 			transform: translate3d(0,-100%,0);
-		}
-
-		
+    }
 		&_caption {
 			height: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-		}
-		// Estilos paa ubicar el contenido de acuerdo a la inclinacion del layout en large
-		@include from(l) {
-			&:nth-child(1n+4) &_caption {
-				// background-color: red;
-				padding-bottom: ($gutter * 3);
-			}	
 		}
 		&_copy {
 			text-align: center;
@@ -79,19 +63,12 @@
 		}
 		&_link {
 			display: block;
-			padding: .5rem 1rem;
-			background-color: color(two);
-			border-radius: $radius;
-			transition: background-color .5s, color .5s, box-shadow .5s;
-			@include shadow(color(grayTwo));
-
-			&:hover {
-				text-decoration: none;
-				background-color: color(alert);
-				color: color(cream);
-				cursor: pointer;
-				box-shadow: none;
-			}
+      @include button(
+        color(two),
+        inherit,
+        color(alert),
+        color(cream)
+      );
 		}
 	}
 }

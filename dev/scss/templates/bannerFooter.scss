@@ -5,6 +5,7 @@
 	background-color: $bgColorOfBF;
 	background-image: $bgImageOfBF;
 	background-repeat: no-repeat;
+	background-attachment: fixed;	
 	background-size: cover;
 	background-position: $bgPositionImageBF;
 	clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
@@ -30,7 +31,8 @@
 	// background-color: red;
 	display: grid;
 	margin-bottom: $gutter;
-	grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gutter;
 	color: color(cream);
 	font: text(normal) $lato;
 
@@ -62,23 +64,17 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 		@include from(m) {
-			grid-column: span 1;
+      grid-column: span 1;
 		}
-
 		&_link {
 			margin: ($gutter / 3) 0;
-			line-height: .1;
+			line-height: .8;
 			font-size: (text(t1) * 1.5);
 			color: color(cream);
-
 			&:hover {
 				text-decoration: none;
 				color: color(alert);
-			}
-			@include from(m) {
-				font-size: (text(t1) * 2);
 			}
 		}
 	}
@@ -88,7 +84,11 @@
 		grid-column: span 2;
 		margin: ($gutter * 1.5);
 		text-align: center;
-		font-size: text(smaller);
+    font-size: text(smaller);
+    
+    &_company {
+      color: color(success);
+    }
 	}
 	// ESTILOS PARA EL lOGO DE EDGRID
 	// &-bookshop {

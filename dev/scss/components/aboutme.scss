@@ -26,31 +26,31 @@
 		}
 
 		&:last-of-type {
-			max-height: 0;
+      max-height: 0;
 			overflow: hidden;
 
 			&.enable {
-				@include slideDown(1.5s, 200px);
+        @include slideDown(1s, 750px);
+        @include from (m) {
+          @include slideDown(1s, 350px);          
+        }
 			}
 			&.disable {
-				@include slideUp(.5s, 200px);
-			}
-
-			@include from(l) {
-				margin: $gutter ($gutter * 3) 0;
-			}
+        @include slideUp(.6s, 750px);
+        @include from (m) {
+          @include slideUp(.6s, 350px);          
+        }
+      }
 		}
 	}
-	// ARROW BUTTON
 	&-button {
-		width: 100%;
-		text-align: center;
-		margin-top: $gutter;
-		margin-left: auto;
-		margin-right: auto;
-		color: color(one);
-		font-size: text(t3);
-		cursor: pointer;
-		@include arrowUpDown(.5s,ease-out);
+		margin: $gutter auto;
+    font-size: text(small);
+    @include button(
+      color(two),
+      inherit,
+      color(success),
+      color(cream)
+    );
 	}
 }

@@ -3,7 +3,7 @@
 //----------------------------------------------
 @mixin slideDown($time: 1s, $height: 100px)
 {
-	// FIXME: Requiere hacer toggle de will-change para mayor optimizacion
+	// NOTE: Requiere hacer toggle de will-change para mayor optimizacion
     max-height: 0;
     overflow: hidden;
     animation: slideDown $time forwards;
@@ -16,7 +16,7 @@
 
 @mixin slideUp($time: 1s, $height: 100px)
 {
-	// FIXME: Requiere hacer toggle de will-change para mayor optimizacion
+	// NOTE: Requiere hacer toggle de will-change para mayor optimizacion
     max-height: $height;
     overflow: hidden;
     animation: slideUp $time forwards;

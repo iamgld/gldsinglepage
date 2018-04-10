@@ -36,49 +36,23 @@
 	// SECCIONES DE LOS CURSOS REALIZADOS
 	&-details {
 		width: 100%;
-		text-align: center;
+    text-align: center;
+    margin-bottom: $gutter;
 
 		@include from(m) {
 			width: 50%;
 		}
 
-		&_title {
-			display: inline-block;
-			color: color(grayOne);
-			font-size: text(normal);
-			font-family: $openSans;
-			margin: ($gutter / 2) 0;
+		&_button {
+			font-size: text(small);
 			line-height: 1.5;
-
-			&:hover {
-				cursor: pointer;
-			}
-		}
-		& > .icon-arrow-right, & > .icon-arrow-down {
-			display: inline-block;
-			cursor: pointer;
-		}
-
-		& > .icon-arrow-right {
-			@include arrowLeftRight(.5s,ease-out);
-		}
-
-		& > .icon-arrow-down {
-			@include arrowUpDown(.5s,ease-out);
-		}
-
-		&_content {
-			display: flex;
-			flex-direction: column;
-			max-height: 0;
-			overflow: hidden;
-
-			&.enable {
-				@include slideDown(1.5s, 300px);
-			}
-			&.disable {
-				@include slideUp(.5s, 300px);
-			}
+      margin-top: ($gutter / 2);
+      @include button(
+        color(two),
+        inherit,
+        color(success),
+        color(cream)
+      );
 		}
 		&_link {
 			margin: 0 auto;
@@ -91,5 +65,30 @@
 				color: color(alert);
 			}
 		}
-	}
+  }
+  // Estilos para las tecnologias a mostrar
+  &-technologies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $gutter;
+    margin: 0 auto;
+
+    &_title {
+      font: text(normal) $openSans;
+      text-align: center;
+      color: color(one);
+      grid-column: span 4;
+    }
+    &_item {
+      margin: 0;
+      grid-column: span 1;
+      // max-height: em(100px);
+      display: flex;
+    }
+    &_image {
+      margin: auto;
+      display: block;
+      max-height: em(60px);
+    }
+  }
 }

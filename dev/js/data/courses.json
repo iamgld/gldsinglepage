@@ -1,0 +1,54 @@
+{
+  "platzy": [
+    {
+      "name": "Mi perfil",
+      "url": "https://platzi.com/@Gregorlopezdev/"
+    },
+    {
+      "name": "Desarrollo web",
+      "url": "https://platzi.com/clases/html5-css3/"
+    },
+    {
+      "name": "Responsive desing",
+      "url": "https://platzi.com/clases/responsive-design/"
+    },
+    {
+      "name": "Animaciones Web",
+      "url": "https://platzi.com/clases/animaciones-web/"
+    },
+    {
+      "name": "Postcss",
+      "url": "https://platzi.com/clases/postcss/"
+    },
+    {
+      "name": "Bootstrap y foundations",
+      "url": "https://platzi.com/clases/fw-frontend/"
+    },
+    {
+      "name": "Fundamentos de la ingeniería de software",
+      "url": "https://platzi.com/clases/ingenieria/"
+    }
+  ],
+  "edteam": [
+    {
+      "name": "Html desde cero",
+      "url": "https://app.ed.team/curso/15"
+    },
+    {
+      "name": "Css desde cero",
+      "url": "https://app.ed.team/curso/8"
+    },
+    {
+      "name": "Javascript desde cero",
+      "url": "https://app.ed.team/curso/19"
+    },
+    {
+      "name": "Sass desde cero",
+      "url": "https://app.ed.team/curso/27"
+    },
+    {
+      "name": "Git desde cero",
+      "url": "https://app.ed.team/curso/12"
+    }
+  ]
+}
