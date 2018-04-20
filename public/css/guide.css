@@ -134,8 +134,7 @@ body{
   position:fixed;
   bottom:35px;
   right:55px;
-  padding:5.33333px;
-  padding-right:32px;
+  padding:5.33333px 8px;
   color:#f3f3f3;
   font-size:20px;
   background-color:#fa4659;
