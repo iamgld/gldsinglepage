@@ -68,11 +68,11 @@ body{
 
 .menu-list_item{
   text-align:center;
-  -ms-grid-column:span 3;
-      grid-column:span 3;
+  -ms-grid-column:span 4;
+      grid-column:span 4;
 }
 
-@media screen and (min-width:1024px){
+@media screen and (min-width:640px){
   .menu-list_item{
     -ms-grid-column:span 1;
         grid-column:span 1;
@@ -91,12 +91,12 @@ body{
   padding:0;
 }
 
-@media screen and (min-width:1024px){
+@media screen and (min-width:640px){
   .menu-list_item:first-child{
     text-align:left;
     margin-bottom:0;
-    -ms-grid-column:span 8;
-        grid-column:span 8;
+    -ms-grid-column:span 9;
+        grid-column:span 9;
   }
 }
 
@@ -122,10 +122,7 @@ body{
   .icon-projects:after{
     content:"Proyectos";
   }
-  .icon-guide:after{
-    content:"Guia";
-  }
-  .icon-experience:before,.icon-guide:before,.icon-projects:before,.icon-study:before{
+  .icon-experience:before,.icon-projects:before,.icon-study:before{
     position:relative;
     top:1px;
     margin-right:5.33333px;
